@@ -365,6 +365,8 @@
 "Assets/Scripts/AssemblySystem/Command/ClickAssemblyCommand.cs"
 "Assets/Scripts/AssemblySystem/Command/ConnectAssemblyCommand.cs"
 "Assets/Scripts/AssemblySystem/Manager/AssemblyManager.cs"
+"Assets/Scripts/AssemblySystem/Views/ClickObject.cs"
+"Assets/Scripts/AssemblySystem/Views/ConnectObject.cs"
 "Assets/Scripts/GameplaySceneInstaller.cs"
 -langversion:9.0
 

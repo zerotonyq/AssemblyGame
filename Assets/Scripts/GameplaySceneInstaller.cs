@@ -5,6 +5,6 @@ public class GameplaySceneInstaller : MonoInstaller
 {
     public override void InstallBindings()
     {
-        Container.Bind<AssemblyManager>().AsSingle();
+        Container.Bind<AssemblyManager>().AsSingle().NonLazy();
     }
 }

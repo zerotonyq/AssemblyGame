@@ -7,7 +7,7 @@ namespace AssemblySystem.Manager
 {
     public class AssemblyManager
     {
-        private Stack<AssemblyCommand> _commands;
+        private Stack<AssemblyCommand> _commands = new Stack<AssemblyCommand>();
 
         public void ExecCommand(AssemblyCommand command)
         {
