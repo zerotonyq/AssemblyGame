@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0266febec34f51bdaa9e41bd02bfc1, type: 3}
+  m_Name: DefaultAssemblyPartsSO
+  m_EditorClassIdentifier: 
+  prefabViews:
+  - {fileID: 8652553946101833963, guid: bbe3f5cce9b080547a789fa0d932bbe4, type: 3}
+  - {fileID: 2739731391210733862, guid: d993089b843e89c45844d3997790e56d, type: 3}

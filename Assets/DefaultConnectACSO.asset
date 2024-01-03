@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d0f35f66dfb408283362517a71ba17b, type: 3}
+  m_Name: DefaultConnectACSO
+  m_EditorClassIdentifier: 
+  firstMesh: {fileID: -5546940888850326318, guid: 56f20bdae32ba2146977b9406395c7af, type: 3}
+  secondMesh: {fileID: -3262789968867269347, guid: bbe08084c34d4d84d94c2b0ae625ded1, type: 3}

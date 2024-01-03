@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46ed6a1f1c34b93abbc9f6a28836373, type: 3}
+  m_Name: DefaultClickACSO
+  m_EditorClassIdentifier: 
+  commandHandlerPrefab: {fileID: 8652553946101833963, guid: bbe3f5cce9b080547a789fa0d932bbe4, type: 3}
+  mesh: {fileID: -3262789968867269347, guid: bbe08084c34d4d84d94c2b0ae625ded1, type: 3}

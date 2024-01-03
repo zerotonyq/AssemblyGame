@@ -127,6 +127,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""6c50a17d-3ec6-474d-ab36-478fb2ad44e5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -149,6 +158,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""KeyboardMouse"",
                     ""action"": ""CursorPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""218d967a-f5df-450a-adaf-c34267d92db6"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Tap"",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -192,6 +212,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Assembly = asset.FindActionMap("Assembly", throwIfNotFound: true);
         m_Assembly_Select = m_Assembly.FindAction("Select", throwIfNotFound: true);
         m_Assembly_CursorPosition = m_Assembly.FindAction("CursorPosition", throwIfNotFound: true);
+        m_Assembly_Click = m_Assembly.FindAction("Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,12 +322,14 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IAssemblyActions> m_AssemblyActionsCallbackInterfaces = new List<IAssemblyActions>();
     private readonly InputAction m_Assembly_Select;
     private readonly InputAction m_Assembly_CursorPosition;
+    private readonly InputAction m_Assembly_Click;
     public struct AssemblyActions
     {
         private @PlayerInputActions m_Wrapper;
         public AssemblyActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Select => m_Wrapper.m_Assembly_Select;
         public InputAction @CursorPosition => m_Wrapper.m_Assembly_CursorPosition;
+        public InputAction @Click => m_Wrapper.m_Assembly_Click;
         public InputActionMap Get() { return m_Wrapper.m_Assembly; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -322,6 +345,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CursorPosition.started += instance.OnCursorPosition;
             @CursorPosition.performed += instance.OnCursorPosition;
             @CursorPosition.canceled += instance.OnCursorPosition;
+            @Click.started += instance.OnClick;
+            @Click.performed += instance.OnClick;
+            @Click.canceled += instance.OnClick;
         }
 
         private void UnregisterCallbacks(IAssemblyActions instance)
@@ -332,6 +358,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @CursorPosition.started -= instance.OnCursorPosition;
             @CursorPosition.performed -= instance.OnCursorPosition;
             @CursorPosition.canceled -= instance.OnCursorPosition;
+            @Click.started -= instance.OnClick;
+            @Click.performed -= instance.OnClick;
+            @Click.canceled -= instance.OnClick;
         }
 
         public void RemoveCallbacks(IAssemblyActions instance)
@@ -375,5 +404,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnSelect(InputAction.CallbackContext context);
         void OnCursorPosition(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
     }
 }
