@@ -97,9 +97,9 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\PoolCleanupChecker.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Static\PoolableStaticMemoryPool.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\IdBinder.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Providers\GetterProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Main\IInstantiator.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\BindInfo\FactoryBindInfo.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Providers\GetterProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Internal\PreserveAttribute.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Providers\PrefabProviders\PrefabProvider.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\DeclareSignal\SignalDeclarationBindInfo.cs" />
@@ -149,10 +149,10 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\Kernels\SceneKernel.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Finalizers\ProviderBindingFinalizer.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\PlaceholderFactoryBase.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderMultiple.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder10.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\SignalTickPriorityCopyBinder.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\Util\StaticMemoryPoolRegistry.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderMultiple.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\AnimatorInterfaces\AnimatorIkHandlerManager.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\SignalDeclaration.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder4.cs" />
@@ -192,8 +192,8 @@
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceBinder\FactoryToChoiceBinder1.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceBinder\FactoryToChoiceBinder2.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerFacade.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerShootHandler.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Misc\LevelBoundary.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerShootHandler.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Util\ProfileBlock.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\SignalSubscriptionId.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Internal\Assert.cs" />
@@ -287,8 +287,8 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerHealthWatcher.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\IMemoryPool.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Player\PlayerDirectionHandler.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Ship\States\ShipStateWaitingToStart.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Main\SignalDeclarationAsyncInitializer.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Ship\States\ShipStateWaitingToStart.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\PoolableMemoryPool.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryToChoiceBinder\FactoryToChoiceBinder0.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder1.cs" />
@@ -331,8 +331,8 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\SignalCopyBinder.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame2 (Advanced)\Scripts\Enemy\EnemyRegistry.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder6.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\SceneDecoratorContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Providers\SubContainerDependencyProvider.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\SceneDecoratorContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\Signals\Internal\Binders\BindSignal\BindSignalIdToBinder.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Providers\MethodProviderUntyped.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Misc\LevelHelper.cs" />
@@ -349,8 +349,8 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\SampleGame1 (Beginner)\Scripts\Asteroid\Asteroid.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\SubContainerBinder\FactorySubContainerBinder6.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Util\ReflectionInfoTypeInfoConverter.cs" />
-    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\ProjectContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Factories\Pooling\PoolFactory.cs" />
+    <Compile Include="Assets\Plugins\Zenject\Source\Install\Contexts\ProjectContext.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Runtime\AnimatorInterfaces\IAnimatorMoveHandler.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryFromBinder\FactoryFromBinder2.cs" />
     <Compile Include="Assets\Plugins\Zenject\Source\Binding\Binders\Factory\FactoryArgumentsToChoiceBinder\FactoryArgumentsToChoiceBinder6.cs" />
@@ -625,46 +625,46 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Zenject-usage">
-      <HintPath>C:\AssemblyGame\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Assets\Plugins\Zenject\Source\Usage\Zenject-usage.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="ReportGeneratorMerged">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.testtools.codecoverage@1.2.4\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="unityplastic">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Pdb">
-      <HintPath>C:\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="log4netPlastic">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.collab-proxy@2.2.0\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Rocks">
-      <HintPath>C:\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil.Mdb">
-      <HintPath>C:\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>C:\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\PackageCache\com.unity.visualscripting@1.9.1\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
     </Reference>
     <Reference Include="Zenject.ReflectionBaking.Mono.Cecil">
-      <HintPath>C:\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Assets\Plugins\Zenject\OptionalExtras\ReflectionBaking\Lib\Zenject.ReflectionBaking.Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>
@@ -1033,10 +1033,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:\AssemblyGame\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:\AssemblyGame\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

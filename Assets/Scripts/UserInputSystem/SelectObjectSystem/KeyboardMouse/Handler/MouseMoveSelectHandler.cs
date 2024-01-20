@@ -25,7 +25,6 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Model
             
             _mousePositionInputAction = _playerInputActions.Assembly.CursorPosition;
             
-            _playerInputActions.Assembly.CursorPosition.Enable();
             _playerInputActions.Assembly.Enable();
             
             _playerInputActions.Assembly.Select.started += Select;
