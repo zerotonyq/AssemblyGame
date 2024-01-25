@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace UserInputSystem.SelectObjectSystem.KeyboardMouse
+namespace Game.UserInputSystem.SelectObjectSystem
 {
     public abstract class SelectHandler
     {

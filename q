@@ -1,0 +1,736 @@
+warning: in the working copy of 'Assets/Scenes/GameplayTestingScene.unity', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Library/Bee/1900b0aE.dag.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Library/Bee/fullprofile.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Library/PackageManager/ProjectCache', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'Packages/packages-lock.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/Packages/com.unity.probuilder/Settings.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'ProjectSettings/TagManager.asset', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'UserSettings/Layouts/default-2022.dwlt', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/Assembly-CSharp.csproj b/Assembly-CSharp.csproj[m
+[1mindex 37571978..56177ed4 100644[m
+[1m--- a/Assembly-CSharp.csproj[m
+[1m+++ b/Assembly-CSharp.csproj[m
+[36m@@ -45,33 +45,48 @@[m
+     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />[m
+   </ItemGroup>[m
+   <ItemGroup>[m
+[31m-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\Base\AssemblyCommand.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ClickAssemblyCommand.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectAssemblyCommand.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ClickCommandValidator.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ConnectCommandValidator.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\MoveSystem\IMovable.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\IBase\IValidatable.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Scheme\AssemblyCommandScheme.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />[m
+[31m-    <Compile Include="Assets\Input\PlayerInputActions.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\Base\CommandView.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />[m
+     <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\IBase\ICommandView.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\MoveSystem\MoveComponent.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\Utils\RaycastHelper.cs" />[m
+[31m-    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />[m
+     <Compile Include="Assets\Scripts\CommonInterfaces\ISubscribable.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Chasing\ChaseComponent.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Chasing\Config\NavMeshConfig.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Detecting\Config\DetectConfig.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Detecting\DetectComponent.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Moving\Interfaces\IMovable.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Moving\MoveComponent.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Moving\Config\MoveConfig.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\PlayerComponent.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Rotating\Config\RotateConfig.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Rotating\Interfaces\IRotatable.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Components\Rotating\RotateComponent.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Entities\Character\Character.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Entities\Character\Factory\CharacterFactory.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Entities\Enemy\Factory\EnemyFactory.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Input\PlayerInputActions.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Utils\CoroutineExecuter.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Utils\DistanceChecker.cs" />[m
+[32m+[m[32m    <Compile Include="Assets\Scripts\Utils\RaycastHelper.cs" />[m
+     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />[m
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />[m
+     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />[m
+[36m@@ -848,6 +863,14 @@[m
+       <Name>Zenject-PoolMonitor-Editor</Name>[m
+     </ProjectReference>[m
+   </ItemGroup>[m
+[32m+[m[32m  <ItemGroup>[m
+[32m+[m[32m    <Folder Include="Assets\Scripts\Components\CombatSystem\Melee\" />[m
+[32m+[m[32m    <Folder Include="Assets\Scripts\Components\CombatSystem\Ranged\" />[m
+[32m+[m[32m  </ItemGroup>[m
+[32m+[m[32m  <ItemGroup>[m
+[32m+[m[32m    <Content Include="Assets\Scripts\Components\CombatSystem\Melee.meta" />[m
+[32m+[m[32m    <Content Include="Assets\Scripts\Components\CombatSystem\Ranged.meta" />[m
+[32m+[m[32m  </ItemGroup>[m
+   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />[m
+   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.[m
+        Other similar extension points exist, see Microsoft.Common.targets.[m
+[1mdiff --git a/Assets/Scenes/GameplayTestingScene.unity b/Assets/Scenes/GameplayTestingScene.unity[m
+[1mindex a3309c37..698c23d9 100644[m
+[1m--- a/Assets/Scenes/GameplayTestingScene.unity[m
+[1m+++ b/Assets/Scenes/GameplayTestingScene.unity[m
+[36m@@ -279,135 +279,8 @@[m [mTransform:[m
+   m_LocalScale: {x: 1, y: 1, z: 1}[m
+   m_ConstrainProportionsScale: 0[m
+   m_Children: [][m
+[31m-  m_Father: {fileID: 0}[m
+[32m+[m[32m  m_Father: {fileID: 1668489987}[m
+   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}[m
+[31m---- !u!1 &188586764[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 188586765}[m
+[31m-  - component: {fileID: 188586768}[m
+[31m-  - component: {fileID: 188586767}[m
+[31m-  - component: {fileID: 188586766}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: cm[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 1[m
+[31m---- !u!4 &188586765[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 188586764}[m
+[31m-  serializedVersion: 2[m
+[31m-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children: [][m
+[31m-  m_Father: {fileID: 1732143802}[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!114 &188586766[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 188586764}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}[m
+[31m-  m_LookaheadTime: 0[m
+[31m-  m_LookaheadSmoothing: 0[m
+[31m-  m_LookaheadIgnoreY: 0[m
+[31m-  m_HorizontalDamping: 0[m
+[31m-  m_VerticalDamping: 0[m
+[31m-  m_ScreenX: 0.5[m
+[31m-  m_ScreenY: 0.6[m
+[31m-  m_DeadZoneWidth: 0[m
+[31m-  m_DeadZoneHeight: 0[m
+[31m-  m_SoftZoneWidth: 0.8[m
+[31m-  m_SoftZoneHeight: 0.8[m
+[31m-  m_BiasX: 0[m
+[31m-  m_BiasY: 0[m
+[31m-  m_CenterOnActivate: 1[m
+[31m---- !u!114 &188586767[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 188586764}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_BindingMode: 5[m
+[31m-  m_FollowOffset: {x: 0, y: 2.5, z: -3}[m
+[31m-  m_XDamping: 1[m
+[31m-  m_YDamping: 1[m
+[31m-  m_ZDamping: 1[m
+[31m-  m_AngularDampingMode: 0[m
+[31m-  m_PitchDamping: 0[m
+[31m-  m_YawDamping: 0[m
+[31m-  m_RollDamping: 0[m
+[31m-  m_AngularDamping: 0[m
+[31m-  m_Heading:[m
+[31m-    m_Definition: 2[m
+[31m-    m_VelocityFilterStrength: 4[m
+[31m-    m_Bias: 0[m
+[31m-  m_RecenterToTargetHeading:[m
+[31m-    m_enabled: 0[m
+[31m-    m_WaitTime: 1[m
+[31m-    m_RecenteringTime: 2[m
+[31m-    m_LegacyHeadingDefinition: -1[m
+[31m-    m_LegacyVelocityFilterStrength: -1[m
+[31m-  m_XAxis:[m
+[31m-    Value: 0[m
+[31m-    m_SpeedMode: 0[m
+[31m-    m_MaxSpeed: 300[m
+[31m-    m_AccelTime: 0.1[m
+[31m-    m_DecelTime: 0.1[m
+[31m-    m_InputAxisName: [m
+[31m-    m_InputAxisValue: 0[m
+[31m-    m_InvertInput: 1[m
+[31m-    m_MinValue: -180[m
+[31m-    m_MaxValue: 180[m
+[31m-    m_Wrap: 1[m
+[31m-    m_Recentering:[m
+[31m-      m_enabled: 0[m
+[31m-      m_WaitTime: 1[m
+[31m-      m_RecenteringTime: 2[m
+[31m-      m_LegacyHeadingDefinition: -1[m
+[31m-      m_LegacyVelocityFilterStrength: -1[m
+[31m-  m_LegacyRadius: 3.4028235e+38[m
+[31m-  m_LegacyHeightOffset: 3.4028235e+38[m
+[31m-  m_LegacyHeadingBias: 3.4028235e+38[m
+[31m-  m_HeadingIsSlave: 1[m
+[31m---- !u!114 &188586768[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 188586764}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+ --- !u!1 &225873481[m
+ GameObject:[m
+   m_ObjectHideFlags: 0[m
+[36m@@ -438,6 +311,8 @@[m [mMonoBehaviour:[m
+   m_Script: {fileID: 11500000, guid: 3c97619c1b293d249817e58f1c86e8bd, type: 3}[m
+   m_Name: [m
+   m_EditorClassIdentifier: [m
+[32m+[m[32m  virtualCameraPrefab: {fileID: 2926406461225009999, guid: 0e998541c7c93434586c758687198cf2, type: 3}[m
+[32m+[m[32m  defaultCharacterPrefab: {fileID: 5386083429679286090, guid: 0a56c09b8a4bd4b419084542d8c9a353, type: 3}[m
+ --- !u!114 &225873483[m
+ MonoBehaviour:[m
+   m_ObjectHideFlags: 0[m
+[36m@@ -485,212 +360,171 @@[m [mTransform:[m
+   m_Children: [][m
+   m_Father: {fileID: 0}[m
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!1 &296348914[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 296348916}[m
+[31m-  - component: {fileID: 296348915}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: MiddleRig[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 1[m
+[31m---- !u!114 &296348915[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 296348914}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_ExcludedPropertiesInInspector:[m
+[31m-  - m_Script[m
+[31m-  - Header[m
+[31m-  - Extensions[m
+[31m-  - m_Priority[m
+[31m-  - m_Transitions[m
+[31m-  - m_Follow[m
+[31m-  - m_StandbyUpdate[m
+[31m-  - m_Lens[m
+[31m-  m_LockStageInInspector: 00000000[m
+[31m-  m_StreamingVersion: 20170927[m
+[31m-  m_Priority: 10[m
+[31m-  m_StandbyUpdate: 2[m
+[31m-  m_LookAt: {fileID: 0}[m
+[31m-  m_Follow: {fileID: 0}[m
+[31m-  m_Lens:[m
+[31m-    FieldOfView: 40[m
+[31m-    OrthographicSize: 10[m
+[31m-    NearClipPlane: 0.1[m
+[31m-    FarClipPlane: 5000[m
+[31m-    Dutch: 0[m
+[31m-    ModeOverride: 0[m
+[31m-    LensShift: {x: 0, y: 0}[m
+[31m-    GateFit: 2[m
+[31m-    FocusDistance: 10[m
+[31m-    m_SensorSize: {x: 1, y: 1}[m
+[31m-  m_Transitions:[m
+[31m-    m_BlendHint: 0[m
+[31m-    m_InheritPosition: 0[m
+[31m-    m_OnCameraLive:[m
+[31m-      m_PersistentCalls:[m
+[31m-        m_Calls: [][m
+[31m-  m_LegacyBlendHint: 0[m
+[31m-  m_ComponentOwner: {fileID: 378088495}[m
+[31m---- !u!4 &296348916[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 296348914}[m
+[31m-  serializedVersion: 2[m
+[31m-  m_LocalRotation: {x: -0, y: 0.9772671, z: -0.212012, w: 1e-45}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children:[m
+[31m-  - {fileID: 378088495}[m
+[31m-  m_Father: {fileID: 1107863018}[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!1 &378088494[m
+[31m-GameObject:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  serializedVersion: 6[m
+[31m-  m_Component:[m
+[31m-  - component: {fileID: 378088495}[m
+[31m-  - component: {fileID: 378088498}[m
+[31m-  - component: {fileID: 378088497}[m
+[31m-  - component: {fileID: 378088496}[m
+[31m-  m_Layer: 0[m
+[31m-  m_Name: cm[m
+[31m-  m_TagString: Untagged[m
+[31m-  m_Icon: {fileID: 0}[m
+[31m-  m_NavMeshLayer: 0[m
+[31m-  m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 1[m
+[31m---- !u!4 &378088495[m
+[31m-Transform:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 378088494}[m
+[31m-  serializedVersion: 2[m
+[31m-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}[m
+[31m-  m_LocalPosition: {x: 0, y: 0, z: 0}[m
+[31m-  m_LocalScale: {x: 1, y: 1, z: 1}[m
+[31m-  m_ConstrainProportionsScale: 0[m
+[31m-  m_Children: [][m
+[31m-  m_Father: {fileID: 296348916}[m
+[31m-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!114 &378088496[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 378088494}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}[m
+[31m-  m_LookaheadTime: 0[m
+[31m-  m_LookaheadSmoothing: 0[m
+[31m-  m_LookaheadIgnoreY: 0[m
+[31m-  m_HorizontalDamping: 0[m
+[31m-  m_VerticalDamping: 0[m
+[31m-  m_ScreenX: 0.5[m
+[31m-  m_ScreenY: 0.55[m
+[31m-  m_DeadZoneWidth: 0[m
+[31m-  m_DeadZoneHeight: 0[m
+[31m-  m_SoftZoneWidth: 0.8[m
+[31m-  m_SoftZoneHeight: 0.8[m
+[31m-  m_BiasX: 0[m
+[31m-  m_BiasY: 0[m
+[31m-  m_CenterOnActivate: 1[m
+[31m---- !u!114 &378088497[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[31m-  m_CorrespondingSourceObject: {fileID: 0}[m
+[31m-  m_PrefabInstance: {fileID: 0}[m
+[31m-  m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 378088494}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: 9384ab8608cdc3d479fe89cd51eed48f, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[31m-  m_BindingMode: 5[m
+[31m-  m_FollowOffset: {x: 0, y: 2.5, z: -3}[m
+[31m-  m_XDamping: 1[m
+[31m-  m_YDamping: 1[m
+[31m-  m_ZDamping: 1[m
+[31m-  m_AngularDampingMode: 0[m
+[31m-  m_PitchDamping: 0[m
+[31m-  m_YawDamping: 0[m
+[31m-  m_RollDamping: 0[m
+[31m-  m_AngularDamping: 0[m
+[31m-  m_Heading:[m
+[31m-    m_Definition: 2[m
+[31m-    m_VelocityFilterStrength: 4[m
+[31m-    m_Bias: 0[m
+[31m-  m_RecenterToTargetHeading:[m
+[31m-    m_enabled: 0[m
+[31m-    m_WaitTime: 1[m
+[31m-    m_RecenteringTime: 2[m
+[31m-    m_LegacyHeadingDefinition: -1[m
+[31m-    m_LegacyVelocityFilterStrength: -1[m
+[31m-  m_XAxis:[m
+[31m-    Value: 0[m
+[31m-    m_SpeedMode: 0[m
+[31m-    m_MaxSpeed: 300[m
+[31m-    m_AccelTime: 0.1[m
+[31m-    m_DecelTime: 0.1[m
+[31m-    m_InputAxisName: [m
+[31m-    m_InputAxisValue: 0[m
+[31m-    m_InvertInput: 1[m
+[31m-    m_MinValue: -180[m
+[31m-    m_MaxValue: 180[m
+[31m-    m_Wrap: 1[m
+[31m-    m_Recentering:[m
+[31m-      m_enabled: 0[m
+[31m-      m_WaitTime: 1[m
+[31m-      m_RecenteringTime: 2[m
+[31m-      m_LegacyHeadingDefinition: -1[m
+[31m-      m_LegacyVelocityFilterStrength: -1[m
+[31m-  m_LegacyRadius: 3.4028235e+38[m
+[31m-  m_LegacyHeightOffset: 3.4028235e+38[m
+[31m-  m_LegacyHeadingBias: 3.4028235e+38[m
+[31m-  m_HeadingIsSlave: 1[m
+[31m---- !u!114 &378088498[m
+[31m-MonoBehaviour:[m
+[31m-  m_ObjectHideFlags: 3[m
+[32m+[m[32m--- !u!43 &574320831[m
+[32m+[m[32mMesh:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+   m_CorrespondingSourceObject: {fileID: 0}[m
+   m_PrefabInstance: {fileID: 0}[m
+   m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 378088494}[m
+[31m-  m_Enabled: 1[m
+[31m-  m_EditorHideFlags: 0[m
+[31m-  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}[m
+[31m-  m_Name: [m
+[31m-  m_EditorClassIdentifier: [m
+[32m+[m[32m  m_Name: pb_Mesh-23222[m
+[32m+[m[32m  serializedVersion: 11[m
+[32m+[m[32m  m_SubMeshes:[m
+[32m+[m[32m  - serializedVersion: 2[m
+[32m+[m[32m    firstByte: 0[m
+[32m+[m[32m    indexCount: 36[m
+[32m+[m[32m    topology: 0[m
+[32m+[m[32m    baseVertex: 0[m
+[32m+[m[32m    firstVertex: 0[m
+[32m+[m[32m    vertexCount: 24[m
+[32m+[m[32m    localAABB:[m
+[32m+[m[32m      m_Center: {x: 1.5, y: 3.5, z: 4}[m
+[32m+[m[32m      m_Extent: {x: 5, y: 3.5, z: 4}[m
+[32m+[m[32m  m_Shapes:[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    shapes: [][m
+[32m+[m[32m    channels: [][m
+[32m+[m[32m    fullWeights: [][m
+[32m+[m[32m  m_BindPose: [][m
+[32m+[m[32m  m_BoneNameHashes:[m[41m [m
+[32m+[m[32m  m_RootBoneNameHash: 0[m
+[32m+[m[32m  m_BonesAABB: [][m
+[32m+[m[32m  m_VariableBoneCountWeights:[m
+[32m+[m[32m    m_Data:[m[41m [m
+[32m+[m[32m  m_MeshCompression: 0[m
+[32m+[m[32m  m_IsReadable: 1[m
+[32m+[m[32m  m_KeepVertices: 1[m
+[32m+[m[32m  m_KeepIndices: 1[m
+[32m+[m[32m  m_IndexFormat: 0[m
+[32m+[m[32m  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00100011001200110013001200140015001600150017001600[m
+[32m+[m[32m  m_VertexData:[m
+[32m+[m[32m    serializedVersion: 3[m
+[32m+[m[32m    m_VertexCount: 24[m
+[32m+[m[32m    m_Channels:[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 3[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 12[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 3[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 24[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 4[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 40[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 2[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    - stream: 0[m
+[32m+[m[32m      offset: 0[m
+[32m+[m[32m      format: 0[m
+[32m+[m[32m      dimension: 0[m
+[32m+[m[32m    m_DataSize: 1152[m
+[32m+[m[32m    _typelessdata: 000060c0000000000000004100000000000000000000803f000080bf0000000000000000000080bf00006040000000000000d040000000000000004100000000000000000000803f000080bf0000000000000000000080bf0000d0c000000000000060c00000e0400000004100000000000000000000803f000080bf0000000000000000000080bf000060400000e0400000d0400000e0400000004100000000000000000000803f000080bf0000000000000000000080bf0000d0c00000e0400000d04000000000000000410000803f000000000000000000000000000000000000803f000080bf00000041000000000000d04000000000000000000000803f000000000000000000000000000000000000803f000080bf00000000000000000000d0400000e040000000410000803f000000000000000000000000000000000000803f000080bf000000410000e0400000d0400000e040000000000000803f000000000000000000000000000000000000803f000080bf000000000000e0400000d04000000000000000000000000000000000000080bf0000803f0000000000000000000080bf0000d04000000000000060c000000000000000000000000000000000000080bf0000803f0000000000000000000080bf000060c0000000000000d0400000e040000000000000000000000000000080bf0000803f0000000000000000000080bf0000d0400000e040000060c00000e040000000000000000000000000000080bf0000803f0000000000000000000080bf000060c00000e040000060c00000000000000000000080bf00000000000000000000000000000000000080bf000080bf0000000000000000000060c00000000000000041000080bf00000000000000000000000000000000000080bf000080bf000000c100000000000060c00000e04000000000000080bf00000000000000000000000000000000000080bf000080bf000000000000e040000060c00000e04000000041000080bf00000000000000000000000000000000000080bf000080bf000000c10000e040000060c00000e04000000041000000000000803f000000000000803f0000000000000000000080bf000060c0000000410000d0400000e04000000041000000000000803f000000000000803f0000000000000000000080bf0000d04000000041000060c00000e04000000000000000000000803f000000000000803f0000000000000000000080bf000060c0000000000000d0400000e04000000000000000000000803f000000000000803f0000000000000000000080bf0000d04000000000000060c0000000000000000000000000000080bf00000000000080bf0000000000000000000080bf00006040000000000000d040000000000000000000000000000080bf00000000000080bf0000000000000000000080bf0000d0c000000000000060c0000000000000004100000000000080bf00000000000080bf0000000000000000000080bf00006040000000410000d040000000000000004100000000000080bf00000000000080bf0000000000000000000080bf0000d0c000000041[m
+[32m+[m[32m  m_CompressedMesh:[m
+[32m+[m[32m    m_Vertices:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Range: 0[m
+[32m+[m[32m      m_Start: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_UV:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Range: 0[m
+[32m+[m[32m      m_Start: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_Normals:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Range: 0[m
+[32m+[m[32m      m_Start: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_Tangents:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Range: 0[m
+[32m+[m[32m      m_Start: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_Weights:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_NormalSigns:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_TangentSigns:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_FloatColors:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Range: 0[m
+[32m+[m[32m      m_Start: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_BoneIndices:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_Triangles:[m
+[32m+[m[32m      m_NumItems: 0[m
+[32m+[m[32m      m_Data:[m[41m [m
+[32m+[m[32m      m_BitSize: 0[m
+[32m+[m[32m    m_UVInfo: 0[m
+[32m+[m[32m  m_LocalAABB:[m
+[32m+[m[32m    m_Center: {x: 1.5, y: 3.5, z: 4}[m
+[32m+[m[32m    m_Extent: {x: 5, y: 3.5, z: 4}[m
+[32m+[m[32m  m_MeshUsageFlags: 0[m
+[32m+[m[32m  m_CookingOptions: 30[m
+[32m+[m[32m  m_BakedConvexCollisionMesh:[m[41m [m
+[32m+[m[32m  m_BakedTriangleCollisionMesh:[m[41m [m
+[32m+[m[32m  m_MeshMetrics[0]: 1[m
+[32m+[m[32m  m_MeshMetrics[1]: 1[m
+[32m+[m[32m  m_MeshOptimizationFlags: 1[m
+[32m+[m[32m  m_StreamData:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    offset: 0[m
+[32m+[m[32m    size: 0[m
+[32m+[m[32m    path:[m[41m [m
+ --- !u!1 &844031420[m
+ GameObject:[m
+   m_ObjectHideFlags: 0[m
+[36m@@ -751,7 +585,7 @@[m [mCamera:[m
+     height: 1[m
+   near clip plane: 0.1[m
+   far clip plane: 5000[m
+[31m-  field of view: 40[m
+[32m+[m[32m  field of view: 60.000004[m
+   orthographic: 0[m
+   orthographic size: 10[m
+   m_Depth: -1[m
+[36m@@ -777,8 +611,8 @@[m [mTransform:[m
+   m_PrefabAsset: {fileID: 0}[m
+   m_GameObject: {fileID: 844031420}[m
+   serializedVersion: 2[m
+[31m-  m_LocalRotation: {x: 0, y: 0.9772671, z: -0.21201202, w: 0}[m
+[31m-  m_LocalPosition: {x: 0, y: 8, z: 9}[m
+[32m+[m[32m  m_LocalRotation: {x: 0.4132163, y: -1e-45, z: 1e-45, w: 0.9106329}[m
+[32m+[m[32m  m_LocalPosition: {x: 0, y: 11, z: -9}[m
+   m_LocalScale: {x: 1, y: 1, z: 1}[m
+   m_ConstrainProportionsScale: 0[m
+   m_Children: [][m
+[36m@@ -818,7 +652,7 @@[m [mMonoBehaviour:[m
+   m_CameraActivatedEvent:[m
+     m_PersistentCalls:[m
+       m_Calls: [][m
+[31m---- !u!1 &1038325711[m
+[32m+[m[32m--- !u!1 &1012521780[m
+ GameObject:[m
+   m_ObjectHideFlags: 0[m
+   m_CorrespondingSourceObject: {fileID: 0}[m
+[36m@@ -826,68 +660,60 @@[m [mGameObject:[m
+   m_PrefabAsset: {fileID: 0}[m
+   serializedVersion: 6[m
+   m_Component:[m
+[31m-  - component: {fileID: 1038325712}[m
+[31m-  - component: {fileID: 1038325716}[m
+[31m-  - component: {fileID: 1038325715}[m
+[31m-  - component: {fileID: 1038325717}[m
+[31m-  - component: {fileID: 1038325714}[m
+[31m-  - component: {fileID: 1038325713}[m
+[32m+[m[32m  - component: {fileID: 1012521782}[m
+[32m+[m[32m  - component: {fileID: 1012521781}[m
+[32m+[m[32m  - component: {fileID: 1012521783}[m
+   m_Layer: 0[m
+[31m-  m_Name: Character[m
+[32m+[m[32m  m_Name: GameObject[m
+   m_TagString: Untagged[m
+   m_Icon: {fileID: 0}[m
+   m_NavMeshLayer: 0[m
+   m_StaticEditorFlags: 0[m
+[31m-  m_IsActive: 1[m
+[31m---- !u!4 &1038325712[m
+[32m+[m[32m  m_IsActive: 0[m
+[32m+[m[32m--- !u!195 &1012521781[m
+[32m+[m[32mNavMeshAgent:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 1012521780}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_AgentTypeID: 0[m
+[32m+[m[32m  m_Radius: 0.5[m
+[32m+[m[32m  m_Speed: 3.5[m
+[32m+[m[32m  m_Acceleration: 8[m
+[32m+[m[32m  avoidancePriority: 50[m
+[32m+[m[32m  m_AngularSpeed: 120[m
+[32m+[m[32m  m_StoppingDistance: 0[m
+[32m+[m[32m  m_AutoTraverseOffMeshLink: 1[m
+[32m+[m[32m  m_AutoBraking: 1[m
+[32m+[m[32m  m_AutoRepath: 1[m
+[32m+[m[32m  m_Height: 2[m
+[32m+[m[32m  m_BaseOffset: 0[m
+[32m+[m[32m  m_WalkableMask: 4294967295[m
+[32m+[m[32m  m_ObstacleAvoidanceType: 4[m
+[32m+[m[32m--- !u!4 &1012521782[m
+ Transform:[m
+   m_ObjectHideFlags: 0[m
+   m_CorrespondingSourceObject: {fileID: 0}[m
+   m_PrefabInstance: {fileID: 0}[m
+   m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 1038325711}[m
+[32m+[m[32m  m_GameObject: {fileID: 1012521780}[m
+   serializedVersion: 2[m
+   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}[m
+[31m-  m_LocalPosition: {x: -0, y: 3, z: -1}[m
+[32m+[m[32m  m_LocalPosition: {x: -1, y: 1, z: 1}[m
+   m_LocalScale: {x: 1, y: 1, z: 1}[m
+   m_ConstrainProportionsScale: 0[m
+   m_Children: [][m
+   m_Father: {fileID: 0}[m
+   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}[m
+[31m---- !u!54 &1038325713[m
+[31m-Rigidbody:[m
+[32m+[m[32m--- !u!135 &1012521783[m
+[32m+[m[32mSphereCollider:[m
+   m_ObjectHideFlags: 0[m
+   m_CorrespondingSourceObject: {fileID: 0}[m
+   m_PrefabInstance: {fileID: 0}[m
+   m_PrefabAsset: {fileID: 0}[m
+[31m-  m_GameObject: {fileID: 1038325711}[m
+[31m-  serializedVersion: 4[m
+[31m-  m_Mass: 80[m
+[31m-  m_Drag: 0[m
+[31m-  m_AngularDrag: 0.05[m
+[31m-  m_CenterOfMass: {x: 0, y: 0, z: 0}[m
+[31m-  m_InertiaTensor: {x: 1, y: 1, z: 1}[m
+[31m-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}[m
+[31m-  m_IncludeLayers:[m
+[31m-    serializedVersion: 2[m
+[31m-    m_Bits: 0[m
+[31m-  m_ExcludeLayers:[m
+[31m-    serializedVersion: 2[m
+[31m-    m_Bits: 0[m
+[31m-  m_ImplicitCom: 1[m
+[31m-  m_ImplicitTensor: 1[m
+[31m-  m_UseGravity: 1[m
+[31m-  m_IsKinematic: 0[

@@ -45,33 +45,48 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\Base\AssemblyCommand.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ClickAssemblyCommand.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectAssemblyCommand.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ClickCommandValidator.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ConnectCommandValidator.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />
-    <Compile Include="Assets\Scripts\MoveSystem\IMovable.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\IBase\IValidatable.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />
-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Scheme\AssemblyCommandScheme.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\Base\CommandView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\IBase\ICommandView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />
+    <Compile Include="Assets\Scripts\CommonInterfaces\ISubscribable.cs" />
+    <Compile Include="Assets\Scripts\Components\Chasing\ChaseComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Chasing\Config\NavMeshConfig.cs" />
+    <Compile Include="Assets\Scripts\Components\Detecting\Config\DetectConfig.cs" />
+    <Compile Include="Assets\Scripts\Components\Detecting\DetectComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\Interfaces\IMovable.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\MoveComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\Config\MoveConfig.cs" />
+    <Compile Include="Assets\Scripts\Components\PlayerComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\Config\RotateConfig.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\Interfaces\IRotatable.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\RotateComponent.cs" />
+    <Compile Include="Assets\Scripts\Entities\Character\Character.cs" />
+    <Compile Include="Assets\Scripts\Entities\Character\Factory\CharacterFactory.cs" />
+    <Compile Include="Assets\Scripts\Entities\Enemy\Factory\EnemyFactory.cs" />
     <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />
     <Compile Include="Assets\Input\PlayerInputActions.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\Base\CommandView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\IBase\ICommandView.cs" />
-    <Compile Include="Assets\Scripts\MoveSystem\MoveComponent.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />
-    <Compile Include="Assets\Scripts\Utils\RaycastHelper.cs" />
+    <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />
     <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />
-    <Compile Include="Assets\Scripts\CommonInterfaces\ISubscribable.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />
+    <Compile Include="Assets\Scripts\Utils\CoroutineExecuter.cs" />
+    <Compile Include="Assets\Scripts\Utils\DistanceChecker.cs" />
+    <Compile Include="Assets\Scripts\Utils\RaycastHelper.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -847,6 +862,14 @@
       <Project>{fc8501c5-8c70-15cc-3ac7-13364d8dc075}</Project>
       <Name>Zenject-PoolMonitor-Editor</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Assets\Scripts\Components\CombatSystem\Melee\" />
+    <Folder Include="Assets\Scripts\Components\CombatSystem\Ranged\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Scripts\Components\CombatSystem\Melee.meta" />
+    <Content Include="Assets\Scripts\Components\CombatSystem\Ranged.meta" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

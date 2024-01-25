@@ -1,17 +1,29 @@
 using System;
 using CommonInterfaces;
+using MoveSystem;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using Zenject;
 
-namespace UserInputSystem.InputMoveSystem
+namespace Game.UserInputSystem.InputMoveSystem
 {
     public class InputMoveHandler : IDisposable, ISubscribable
     {
         private PlayerInputActions _playerInputActions;
         public UnityAction<Vector2> InputChanged;
 
+        private IMovable _currentMovable;
+
+        public void ChangeMovable(IMovable movable)
+        {
+            if (_currentMovable != null)
+            {
+                InputChanged -= _currentMovable.SetDirectionFromInput;    
+            }
+            _currentMovable = movable;
+            InputChanged += _currentMovable.SetDirectionFromInput;
+        }
         [Inject]
         public void Init(PlayerInputActions playerInputActions)
         {
@@ -38,6 +50,8 @@ namespace UserInputSystem.InputMoveSystem
         
         public void Dispose()
         {
+            if (_currentMovable != null)
+                InputChanged -= _currentMovable.SetDirectionFromInput;
             Unsubscribe();
         }
     }

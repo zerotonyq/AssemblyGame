@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using AssemblySystem.Views;
+using Game.UserInputSystem.SelectObjectSystem;
+using Utils;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Model
+namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Handler
 {
     public class MouseMoveSelectHandler : SelectHandler, IDisposable
     {
@@ -36,12 +38,12 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Model
         {
             var mousePosition = _mousePositionInputAction.ReadValue<Vector2>();
             
-            RaycastHit[] results = Utils.RaycastHelper.RaycastObjects(
+            RaycastHit[] results = RaycastHelper.RaycastObjects(
                 () => _mainCamera.ScreenPointToRay(mousePosition),
                 RAY_DISTANCE,
                 RAYCAST_RESULT_COUNT);
 
-            ClickView currentSelectView = Utils.RaycastHelper.GetClosest<ClickView>(ref results);
+            ClickView currentSelectView = RaycastHelper.GetClosest<ClickView>(ref results);
 
             if (currentSelectView == null)
                 return;
@@ -52,12 +54,12 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Model
         {
             var mousePosition = _mousePositionInputAction.ReadValue<Vector2>();
             var cameraRay = _mainCamera.ScreenPointToRay(mousePosition);
-            RaycastHit[] results = Utils.RaycastHelper.RaycastObjects(
+            RaycastHit[] results = RaycastHelper.RaycastObjects(
                 cameraRay,
                 RAY_DISTANCE,
                 RAYCAST_RESULT_COUNT);
 
-            SelectView currentSelectView = Utils.RaycastHelper.GetClosest<SelectView>(ref results);
+            SelectView currentSelectView = RaycastHelper.GetClosest<SelectView>(ref results);
             
             if (currentSelectView == null)
                 return;
@@ -68,7 +70,7 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Model
 
             _isSelected = true;
             
-            var targetPosition = Utils.RaycastHelper.ClosestPointPlaneFacedToCamera(
+            var targetPosition = RaycastHelper.ClosestPointPlaneFacedToCamera(
                 _mainCamera,
                 CurrentSelectedObjectPosition,
                 cameraRay);
