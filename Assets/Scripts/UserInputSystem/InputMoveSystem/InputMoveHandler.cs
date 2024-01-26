@@ -11,7 +11,7 @@ namespace Game.UserInputSystem.InputMoveSystem
     public class InputMoveHandler : IDisposable, ISubscribable
     {
         private PlayerInputActions _playerInputActions;
-        public UnityAction<Vector2> InputChanged;
+        public Action<Vector2> OnInputChanged;
 
         private IMovable _currentMovable;
 
@@ -19,10 +19,10 @@ namespace Game.UserInputSystem.InputMoveSystem
         {
             if (_currentMovable != null)
             {
-                InputChanged -= _currentMovable.SetDirectionFromInput;    
+                OnInputChanged -= _currentMovable.SetDirectionFromInput;    
             }
             _currentMovable = movable;
-            InputChanged += _currentMovable.SetDirectionFromInput;
+            OnInputChanged += _currentMovable.SetDirectionFromInput;
         }
         [Inject]
         public void Init(PlayerInputActions playerInputActions)
@@ -32,7 +32,7 @@ namespace Game.UserInputSystem.InputMoveSystem
         }
         public void AdjustMoveInput(InputAction.CallbackContext ctx)
         {
-            InputChanged?.Invoke(ctx.ReadValue<Vector2>());
+            OnInputChanged?.Invoke(ctx.ReadValue<Vector2>());
         }
 
         public void Subscribe()
@@ -51,7 +51,7 @@ namespace Game.UserInputSystem.InputMoveSystem
         public void Dispose()
         {
             if (_currentMovable != null)
-                InputChanged -= _currentMovable.SetDirectionFromInput;
+                OnInputChanged -= _currentMovable.SetDirectionFromInput;
             Unsubscribe();
         }
     }

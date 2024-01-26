@@ -29,12 +29,12 @@ namespace MoveSystem
         
         public void SetDirectionFromInput(Vector2 direction)
         {
-            _currentMoveDirection = direction;
+            _currentMoveDirection = direction.normalized;
         }
 
         public void SetDirectionFromPosition(Vector3 pos)
         {
-            _currentMoveDirection = new Vector2(pos.x, pos.z);
+            _currentMoveDirection = new Vector2(pos.x, pos.z).normalized;
         }
         private void FixedUpdate()
         {

@@ -16,7 +16,8 @@ public class GameplaySceneInstaller : MonoInstaller
         Container.Bind<Camera>().FromInstance(Camera.main);
         Container.Bind<MouseMoveSelectHandler>().AsSingle().NonLazy();
         Container.Bind<InputMoveHandler>().AsSingle();
-        Container.Bind<EnemyFactory>().AsSingle().WithArguments(defaultCharacterPrefab);
+        Container.Bind<InputJumpHandler>().AsSingle();
+        Container.Bind<EnemyFactory>().AsSingle().WithArguments(defaultCharacterPrefab); // delete with args
         Container.Bind<StartupGameplayScene>().AsSingle().WithArguments(defaultCharacterPrefab, virtualCameraPrefab).NonLazy();
         
 

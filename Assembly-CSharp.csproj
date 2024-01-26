@@ -68,6 +68,9 @@
     <Compile Include="Assets\Scripts\Components\Chasing\Config\NavMeshConfig.cs" />
     <Compile Include="Assets\Scripts\Components\Detecting\Config\DetectConfig.cs" />
     <Compile Include="Assets\Scripts\Components\Detecting\DetectComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\Config\JumpConfig.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\Interfaces\IJumpable.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\JumpComponent.cs" />
     <Compile Include="Assets\Scripts\Components\Moving\Interfaces\IMovable.cs" />
     <Compile Include="Assets\Scripts\Components\Moving\MoveComponent.cs" />
     <Compile Include="Assets\Scripts\Components\Moving\Config\MoveConfig.cs" />
@@ -81,6 +84,7 @@
     <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />
     <Compile Include="Assets\Input\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputJumpHandler.cs" />
     <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />
     <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
     <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />

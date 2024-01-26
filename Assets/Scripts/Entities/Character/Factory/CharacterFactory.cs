@@ -1,3 +1,5 @@
+using Game.Components.Jumping;
+using Game.Components.Jumping.Config;
 using Game.Components.Rotating;
 using Game.Components.Rotating.Config;
 using MoveSystem;
@@ -12,7 +14,8 @@ namespace Character
             GameObject prefab, 
             string name = DEFAULT_NAME,
             MoveConfig moveConfig = null,
-            RotateConfig rotateConfig = null)
+            RotateConfig rotateConfig = null,
+            JumpConfig jumpConfig = null)
         {
             var characterView = GameObject.Instantiate(prefab);
             
@@ -27,6 +30,9 @@ namespace Character
 
             var rotateComponent = character.AddComponentToCharacter<RotateComponent>();
             rotateComponent.Init(rotateConfig ?? RotateConfig.DefaultRotateConfig);
+
+            var jumpComponent = character.AddComponentToCharacter<JumpComponent>();
+            jumpComponent.Init(jumpConfig ?? JumpConfig.DefaultJumpConfig);
             
             return character;
         }
