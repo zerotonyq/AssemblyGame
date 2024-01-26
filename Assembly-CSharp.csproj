@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />
     <Compile Include="Assets\Input\PlayerInputActions.cs" />
     <Compile Include="Assets\Scripts\Utils\DistanceChecker.cs" />
+    <Compile Include="Assets\Scripts\Utils\MonoBehaviourExecuteTimer.cs" />
     <Compile Include="Assets\Scripts\Utils\StructArrayCleaner.cs" />
     <Compile Include="Assets\Scripts\Components\Rotating\Config\RotateConfig.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />

@@ -4,6 +4,7 @@ using Game.Components;
 using Game.Components.Chasing;
 using Game.Components.Config;
 using Game.Components.Rotating;
+using Game.Components.Rotating.Config;
 using MoveSystem;
 using UnityEngine;
 using UnityEngine.AI;
@@ -20,7 +21,10 @@ namespace Enemy
         
         public void CreateEnemy()
         {
-            var currentEnemy = CharacterFactory.CreateCharacter(_characterPrefab, "enemy");
+            var currentEnemy = CharacterFactory.CreateCharacter(
+                _characterPrefab, 
+                "enemy",
+                rotateConfig : new RotateConfig(autoRotateToMoveDirection: true));
             
             var detectComponent = currentEnemy.AddComponentToCharacter<DetectComponent>();
             detectComponent.Init(DetectConfig.DefaultConfig);

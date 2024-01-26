@@ -37,7 +37,7 @@ namespace Game.Components
             _detectionLayer = detectConfig.DetectionLayer;
             _detectionDelay = detectConfig.DetectionDelay;
             _detectionRadius = detectConfig.DetectionRadius;
-            _detectionDistance = detectConfig.DetectionRadius;
+            _detectionDistance = detectConfig.DetectionDistance;
             _detectedRaycastHits = new RaycastHit[detectConfig.DetectionObjectsCount];
             
             _detectionCoroutine = StartCoroutine(DetectionCoroutine());
@@ -55,32 +55,13 @@ namespace Game.Components
             _detectionCoroutine = StartCoroutine(DetectionCoroutine());
         }
 
-        private void OnDisable()
-        {
-            StopAllCoroutines();
-        }
-
-        private float time = 3f;
-        private float t = 0f;
-        
-        //TODO: переписать так, чтобы 3 секунды были в chase component, а тут просто раз в 0.3 сек посылается ивент. 
-        // ротатор как раз будет получать данные только тогда, когда будет визуальный контакт
+        private void OnDisable() => StopAllCoroutines();
         
         private IEnumerator DetectionCoroutine()
         {
             while (true)
             {
-                if (t > 0)
-                {
-                    Debug.Log(_currentTarget);
-                    OnTargetDetected?.Invoke(_currentTarget);
-                    t -= _detectionDelay;
-                }
-                else
-                {
-                    Detect();    
-                }
-                
+                Detect();
                 yield return new WaitForSeconds(_detectionDelay);    
             }
         }
@@ -96,18 +77,18 @@ namespace Game.Components
                 1 << _detectionLayer);
 
             _currentTarget = TryGetTargetFromArray();
-
+            Debug.Log(_currentTarget);
             if (!_currentTarget)
                 return;
             
             Physics.Raycast(transform.position, _currentTarget.position - transform.position, out RaycastHit hit);
 
-            if (hit.collider && hit.collider.TryGetComponent(_targetComponent, out Component comp))
-            {
-                OnTargetDetected?.Invoke(_currentTarget);
-                t = time;
-            }
-                
+            if (!hit.collider || !hit.collider.TryGetComponent(_targetComponent, out Component comp))
+                _currentTarget = null;
+            
+            
+            
+            OnTargetDetected?.Invoke(_currentTarget);
             
             StructArrayCleaner.Clean(_detectedRaycastHits);
         }

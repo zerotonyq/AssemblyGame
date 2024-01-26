@@ -5,6 +5,8 @@ using Game.Entities.Enemy;
 using MoveSystem;
 using UnityEngine;
 using UnityEngine.AI;
+using Utils;
+
 namespace Game.Components.Chasing
 {
     public class ChaseComponent : MonoBehaviour, ISubscribable
@@ -20,6 +22,11 @@ namespace Game.Components.Chasing
         
         private bool _isInitialized;
         
+        //For better AI. Chasing continues when target goes
+        //for some time after going around the corner
+        private float _additionFollowingTime;
+        private float _additionFollowingDelta;
+        private bool _isAdditionalFollowing;
         public void Init(
             MoveComponent moveComponent,
             RotateComponent rotateComponent,
@@ -37,6 +44,8 @@ namespace Game.Components.Chasing
             
             _navMeshAgent = agent;
             _navMeshAgent.stoppingDistance = agentConfig.StoppingDistance;
+            _additionFollowingTime = agentConfig.AdditionFollowingTime;
+            _additionFollowingDelta = agentConfig.AdditionFollowingDelta;
             _navMeshAgent.updatePosition = agentConfig.UpdatePosition;
             _navMeshAgent.updateRotation = agentConfig.UpdateRotation;
             _navMeshAgent.acceleration = agentConfig.Acceleration;
@@ -50,13 +59,33 @@ namespace Game.Components.Chasing
         public void ChaseTargetPosition(Transform target)
         {
             if (!target)
+            {
+                if(!_currentTarget)
+                    return;
+                
+                if (_isAdditionalFollowing)
+                    return;
+                
+                MonoBehaviourExecuteTimer.StartExecuteTimer(
+                    this,
+                    _additionFollowingTime,
+                    _additionFollowingDelta,
+                    () => ChaseTargetPosition(_currentTarget),
+                    () =>
+                    {
+                        _currentTarget = null;
+                        _isAdditionalFollowing = false;
+                    });
+                
+                _isAdditionalFollowing = true;
                 return;
+            }
             
             _currentTarget = target;
-            _navMeshAgent.SetDestination(_currentTarget.position);
             
+            _navMeshAgent.SetDestination(_currentTarget.position);
         }
-
+        
         private void FixedUpdate()
         {
             _moveComponent.SetDirectionFromPosition(_navMeshAgent.nextPosition - transform.position);
