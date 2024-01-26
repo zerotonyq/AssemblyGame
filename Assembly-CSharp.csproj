@@ -45,52 +45,53 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
+    <Compile Include="Assets\Scripts\Components\Chasing\ChaseComponent.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\Base\AssemblyCommand.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ClickAssemblyCommand.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectAssemblyCommand.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ClickCommandValidator.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ConnectCommandValidator.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\IBase\IValidatable.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Scheme\AssemblyCommandScheme.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\Base\CommandView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\IBase\ICommandView.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />
-    <Compile Include="Assets\Scripts\CommonInterfaces\ISubscribable.cs" />
-    <Compile Include="Assets\Scripts\Components\Chasing\ChaseComponent.cs" />
-    <Compile Include="Assets\Scripts\Components\Chasing\Config\NavMeshConfig.cs" />
-    <Compile Include="Assets\Scripts\Components\Detecting\Config\DetectConfig.cs" />
-    <Compile Include="Assets\Scripts\Components\Detecting\DetectComponent.cs" />
-    <Compile Include="Assets\Scripts\Components\Jumping\Config\JumpConfig.cs" />
-    <Compile Include="Assets\Scripts\Components\Jumping\Interfaces\IJumpable.cs" />
-    <Compile Include="Assets\Scripts\Components\Jumping\JumpComponent.cs" />
-    <Compile Include="Assets\Scripts\Components\Moving\Interfaces\IMovable.cs" />
-    <Compile Include="Assets\Scripts\Components\Moving\MoveComponent.cs" />
-    <Compile Include="Assets\Scripts\Components\Moving\Config\MoveConfig.cs" />
-    <Compile Include="Assets\Scripts\Components\PlayerComponent.cs" />
-    <Compile Include="Assets\Scripts\Components\Rotating\Config\RotateConfig.cs" />
-    <Compile Include="Assets\Scripts\Components\Rotating\Interfaces\IRotatable.cs" />
-    <Compile Include="Assets\Scripts\Components\Rotating\RotateComponent.cs" />
     <Compile Include="Assets\Scripts\Entities\Character\Character.cs" />
-    <Compile Include="Assets\Scripts\Entities\Character\Factory\CharacterFactory.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyManager.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectAssemblyCommand.cs" />
+    <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\JumpComponent.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Data\AssemblyPartsSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ClickCommandValidator.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\SelectView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ConnectCommandValidator.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\Interfaces\IRotatable.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\Config\MoveConfig.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\Factory\EnemyFactory.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputJumpHandler.cs" />
+    <Compile Include="Assets\Scripts\Components\Detecting\DetectComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\RotateComponent.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\Base\AssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ConnectView.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\Config\JumpConfig.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\IBase\IValidatable.cs" />
+    <Compile Include="Assets\Scripts\Components\Jumping\Interfaces\IJumpable.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ClickAssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\ClickView.cs" />
+    <Compile Include="Assets\Scripts\Components\PlayerComponent.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Scheme\AssemblyCommandScheme.cs" />
     <Compile Include="Assets\Scripts\GameplaySceneInstaller.cs" />
     <Compile Include="Assets\Input\PlayerInputActions.cs" />
-    <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />
-    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputJumpHandler.cs" />
-    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />
-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
-    <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\SelectHandler.cs" />
-    <Compile Include="Assets\Scripts\Utils\CoroutineExecuter.cs" />
     <Compile Include="Assets\Scripts\Utils\DistanceChecker.cs" />
+    <Compile Include="Assets\Scripts\Utils\StructArrayCleaner.cs" />
+    <Compile Include="Assets\Scripts\Components\Rotating\Config\RotateConfig.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandsSO\ConnectAssemblyCommandSO.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\Base\CommandView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Views\IBase\ICommandView.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Views\AssemblyView.cs" />
+    <Compile Include="Assets\Scripts\Entities\Character\Factory\CharacterFactory.cs" />
+    <Compile Include="Assets\Scripts\Utils\CoroutineExecuter.cs" />
+    <Compile Include="Assets\Scripts\Components\Detecting\Config\DetectConfig.cs" />
     <Compile Include="Assets\Scripts\Utils\RaycastHelper.cs" />
+    <Compile Include="Assets\Scripts\UserInputSystem\InputMoveSystem\InputMoveHandler.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\MoveComponent.cs" />
+    <Compile Include="Assets\Scripts\Components\Chasing\Config\NavMeshConfig.cs" />
+    <Compile Include="Assets\Scripts\CommonInterfaces\ISubscribable.cs" />
+    <Compile Include="Assets\Scripts\Components\Moving\Interfaces\IMovable.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -101,6 +102,7 @@
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Scripts\Thoughts\DetectWithRays.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
@@ -758,6 +760,9 @@
     <Reference Include="com.unity.cinemachine.editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
@@ -782,20 +787,20 @@
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ProBuilder.AddOns.Editor">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
@@ -824,6 +829,9 @@
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Updater">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
@@ -833,6 +841,9 @@
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
@@ -841,6 +852,9 @@
     </Reference>
     <Reference Include="Cinemachine">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+      <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>C:\UnityProjects\AssemblyGame\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
@@ -866,14 +880,6 @@
       <Project>{fc8501c5-8c70-15cc-3ac7-13364d8dc075}</Project>
       <Name>Zenject-PoolMonitor-Editor</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Scripts\Components\CombatSystem\Melee\" />
-    <Folder Include="Assets\Scripts\Components\CombatSystem\Ranged\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\Scripts\Components\CombatSystem\Melee.meta" />
-    <Content Include="Assets\Scripts\Components\CombatSystem\Ranged.meta" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

@@ -24,6 +24,9 @@ namespace Enemy
             
             var detectComponent = currentEnemy.AddComponentToCharacter<DetectComponent>();
             detectComponent.Init(DetectConfig.DefaultConfig);
+
+            var rotateComp = currentEnemy.Components[typeof(RotateComponent)] as RotateComponent;
+            detectComponent.OnTargetDetected += rotateComp.LookAt;
             
             var navMeshAgent = currentEnemy.AddComponentToCharacter<NavMeshAgent>();
             

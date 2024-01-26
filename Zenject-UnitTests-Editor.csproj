@@ -85,8 +85,8 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Other\TestDecorators.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Injection\TestCircularDependencies.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Other\TestTransientMockProvider.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Util\TestListComparer.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\MemoryPool\TestArrayPool.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Util\TestListComparer.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Bindings\TestFromInstance.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Bindings\TestFromSubContainerInstaller.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Conditions\TestConditionsTarget.cs" />
@@ -134,8 +134,8 @@
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\BindFeatures\TestNonLazy.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Conditions\TestConditionsIdentifier.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\BindFeatures\TestConcreteIdentifier.cs" />
-    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Bindings\TestFromMethod.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Injection\TestConstructorInjectionOptional.cs" />
+    <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Bindings\TestFromMethod.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Bindings\TestFromGetter.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\MemoryPool\TestFromPoolableMemoryPoolValidation.cs" />
     <Compile Include="Assets\Plugins\Zenject\OptionalExtras\UnitTests\Editor\Injection\TestNullableValues.cs" />
@@ -417,6 +417,9 @@
     </Reference>
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WebGL.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>

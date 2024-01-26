@@ -6,10 +6,10 @@ namespace Game.Components.Config
     {
         private Type _targetType;
         private const float DEFAULT_DETECTION_DELAY = 0.3f;
-        private const float DEFAULT_DETECTION_RADIUS = 5f;
+        private const float DEFAULT_DETECTION_RADIUS = 4f;
         private const int DEFAULT_DETECTION_LAYER = 6;
         private const int DEFAULT_DETECTION_OBJECTS_COUNT = 5;
-        private const float DEFAULT_DETECTION_DISTANCE = 10;
+        private const float DEFAULT_DETECTION_DISTANCE = 5;
         
         private float _detectionDelay;
         private float _detectionRadius;

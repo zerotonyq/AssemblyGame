@@ -47,22 +47,22 @@ namespace Game.Components.Chasing
         }
         
         
-        public void AssignTarget(Transform target)
+        public void ChaseTargetPosition(Transform target)
         {
             if (!target)
                 return;
+            
             _currentTarget = target;
             _navMeshAgent.SetDestination(_currentTarget.position);
-            _rotateComponent.LookAt(_currentTarget.position);
+            
         }
 
         private void FixedUpdate()
         {
             _moveComponent.SetDirectionFromPosition(_navMeshAgent.nextPosition - transform.position);
         }
-
-        public void Subscribe() =>_detectComponent.OnTargetSwitched += AssignTarget;
-        public void Unsubscribe() => _detectComponent.OnTargetSwitched -= AssignTarget;
+        public void Subscribe() =>_detectComponent.OnTargetDetected += ChaseTargetPosition;
+        public void Unsubscribe() => _detectComponent.OnTargetDetected -= ChaseTargetPosition;
         
         public void OnEnable()
         {

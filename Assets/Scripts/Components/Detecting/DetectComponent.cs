@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Timers;
 using Game.Components.Config;
 using Unity.Jobs;
 using UnityEngine;
@@ -19,7 +20,7 @@ namespace Game.Components
         
         private Transform _currentTarget;
 
-        public Action<Transform> OnTargetSwitched;
+        public Action<Transform> OnTargetDetected;
 
         private Coroutine _detectionCoroutine;
 
@@ -59,18 +60,33 @@ namespace Game.Components
             StopAllCoroutines();
         }
 
+        private float time = 3f;
+        private float t = 0f;
+        
+        //TODO: переписать так, чтобы 3 секунды были в chase component, а тут просто раз в 0.3 сек посылается ивент. 
+        // ротатор как раз будет получать данные только тогда, когда будет визуальный контакт
+        
         private IEnumerator DetectionCoroutine()
         {
             while (true)
             {
-                Detect();
+                if (t > 0)
+                {
+                    Debug.Log(_currentTarget);
+                    OnTargetDetected?.Invoke(_currentTarget);
+                    t -= _detectionDelay;
+                }
+                else
+                {
+                    Detect();    
+                }
+                
                 yield return new WaitForSeconds(_detectionDelay);    
             }
         }
-
+        
         private void Detect()
         {
-            
             Physics.SphereCastNonAlloc(
                 transform.position, 
                 _detectionRadius, 
@@ -79,34 +95,56 @@ namespace Game.Components
                 _detectionDistance,
                 1 << _detectionLayer);
 
-            _currentTarget = null;
+            _currentTarget = TryGetTargetFromArray();
+
+            if (!_currentTarget)
+                return;
+            
+            Physics.Raycast(transform.position, _currentTarget.position - transform.position, out RaycastHit hit);
+
+            if (hit.collider && hit.collider.TryGetComponent(_targetComponent, out Component comp))
+            {
+                OnTargetDetected?.Invoke(_currentTarget);
+                t = time;
+            }
+                
+            
+            StructArrayCleaner.Clean(_detectedRaycastHits);
+        }
+        
+        private Transform TryGetTargetFromArray()
+        {
+            Transform target = _currentTarget;
+            
             for (var i = 0; i < _detectedRaycastHits.Length; ++i)
             {
                 if(!_detectedRaycastHits[i].collider)
                     continue;
                 
-                if (!_detectedRaycastHits[i].collider.TryGetComponent(_targetComponent, out Component comp)) continue;
+                if (!_detectedRaycastHits[i].collider.TryGetComponent(_targetComponent, out Component comp)) 
+                    continue;
 
-                if (!_currentTarget)
+                if (!target)
                 {
-                    _currentTarget = _detectedRaycastHits[i].transform;
+                    target = _detectedRaycastHits[i].transform;
                 }
                 else
-                    _currentTarget = DistanceChecker.GetClosest(
+                {
+                    target = DistanceChecker.GetClosest(
                         transform.position, 
-                        _currentTarget,
+                        target,
                         _detectedRaycastHits[i].transform);
-                break;
+                }
                 
-            }
-            OnTargetSwitched?.Invoke(_currentTarget);
-
-            for (int i = 0; i < _detectedRaycastHits.Length; ++i)
-            {
-                _detectedRaycastHits[i] = default;
+                break;
             }
 
+            return target;
         }
-
+        
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireSphere(transform.position + transform.forward * _detectionRadius, _detectionRadius);
+        }
     }
 }

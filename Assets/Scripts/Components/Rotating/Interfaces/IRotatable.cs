@@ -6,7 +6,7 @@ namespace Game.Components.Rotating.Interfaces
     {
         bool IsRotating { get; }
         float RotationSpeed { get; }
-        void LookAt(Vector3 position);
+        void LookAt(Transform position);
 
     }
 }

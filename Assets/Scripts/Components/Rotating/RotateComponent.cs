@@ -7,6 +7,7 @@ namespace Game.Components.Rotating
 {
     public class RotateComponent : MonoBehaviour, IRotatable
     {
+        
         private float _rotationSpeed;
         private float _rotationEndDeltaDegrees;
         
@@ -15,20 +16,25 @@ namespace Game.Components.Rotating
         private Vector3 _lookVector;
 
         private Quaternion _lookRotation;
+        
+        private bool _isInitialized = false;
+        
         public void Init(RotateConfig config)
         {
             _rotationSpeed = config.RotationMaxSpeed;
             _rotationEndDeltaDegrees = config.RotationEndDeltaDegrees;
         }
 
-        public void LookAt(Vector3 positon)
+        public void LookAt(Transform other)
         {
-            _lookVector = positon - transform.position;
+            if(!other)
+                return;
+            _lookVector = other.position - transform.position;
             _lookRotation = Quaternion.LookRotation(_lookVector, Vector3.up);
             _isRotating = true;
         }
         
-        private void Update()
+        private void FixedUpdate()
         {
             if (!_isRotating)
                 return;
@@ -39,11 +45,12 @@ namespace Game.Components.Rotating
             transform.rotation = Quaternion.Slerp(
                 transform.rotation, 
                 new Quaternion(0,_lookRotation.y, 0, _lookRotation.w), 
-                _rotationSpeed * Time.deltaTime);
+                _rotationSpeed);
         }
         
         public float RotationEndDeltaDegrees => _rotationEndDeltaDegrees;
         public bool IsRotating => _isRotating;
         public float RotationSpeed => _rotationSpeed;
+
     }
 }

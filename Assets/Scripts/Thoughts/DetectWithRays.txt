@@ -1,0 +1,33 @@
+/*_currentTarget = null;
+            float currentAngle = 0f;
+            for (int i = 0; i < rays.Length; ++i)
+            {
+                
+                
+                rays[i].origin = transform.position;
+                var a = Quaternion.AngleAxis(currentAngle, Vector3.up);
+                var b = a * transform.forward;
+                b *= 3f;
+                rays[i].direction = b;
+                
+                if (i % 2 == 0)
+                    currentAngle *= -1;
+                else
+                {
+                    currentAngle += 7.5f * Mathf.Sign(currentAngle);
+                }
+            }
+            
+            for (int i = 0; i < rays.Length; ++i)
+            {
+                Physics.Raycast(rays[i], out RaycastHit hit);
+                if(!hit.collider)
+                    continue;
+                //Debug.Log(hit.collider);
+                if (hit.collider.TryGetComponent(_targetComponent, out Component comp))
+                {
+                    _currentTarget = hit.transform;
+                    break;
+                }
+            OnTargetSwitched?.Invoke(_currentTarget);
+            }*/

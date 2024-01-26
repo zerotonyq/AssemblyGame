@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace MoveSystem
@@ -12,7 +13,7 @@ namespace MoveSystem
         
         private bool _isMoving = false;
         
-        private Vector2 _currentMoveDirection;
+        private Vector3 _currentMoveDirection;
         private Vector3 _currentVelocity;
 
         private void Start()
@@ -29,33 +30,38 @@ namespace MoveSystem
         
         public void SetDirectionFromInput(Vector2 direction)
         {
-            _currentMoveDirection = direction.normalized;
+            _currentMoveDirection = new Vector3(direction.x, 0, direction.y);
         }
 
         public void SetDirectionFromPosition(Vector3 pos)
         {
-            _currentMoveDirection = new Vector2(pos.x, pos.z).normalized;
+            _currentMoveDirection = Vector3.ClampMagnitude(new Vector3(pos.x, 0, pos.z), 1);
         }
         private void FixedUpdate()
         {
             _currentVelocity = _rigidbody.velocity;
+
+            var planeVelocity = new Vector3(_currentVelocity.x, 0, _currentVelocity.z);
+            var fallVelocity = new Vector3(0, _currentVelocity.y, 0);
+
+            if (Vector3.SqrMagnitude(planeVelocity) >= _maximumWalkSpeed)
+            {
+                planeVelocity = Vector3.ClampMagnitude(planeVelocity, _maximumWalkSpeed);
+            }
             
-            if (Mathf.Abs(_currentVelocity.x) >= _maximumWalkSpeed)
-                _currentVelocity = new Vector3(_maximumWalkSpeed * Mathf.Sign(_currentVelocity.x), _currentVelocity.y, _currentVelocity.z);
+            if (Vector3.SqrMagnitude(fallVelocity) >= _maximumFallSpeed)
+            {
+                fallVelocity = Vector3.ClampMagnitude(fallVelocity, _maximumFallSpeed);
+            }
             
-            if (Mathf.Abs(_currentVelocity.y) >= _maximumFallSpeed)
-                _currentVelocity = new Vector3(_currentVelocity.x, _maximumFallSpeed * Mathf.Sign(_currentVelocity.y), _currentVelocity.z);
+            _rigidbody.velocity = planeVelocity + fallVelocity;
             
-            if (Mathf.Abs(_currentVelocity.z) >= _maximumWalkSpeed)
-                _currentVelocity = new Vector3(_currentVelocity.x, _currentVelocity.y, _maximumWalkSpeed * Mathf.Sign(_currentVelocity.z));
-            
-            _rigidbody.velocity = _currentVelocity;
-            
-            _rigidbody.AddForce(new Vector3(
-                _currentMoveDirection.x * _accelerationRate,
-                0,
-                _currentMoveDirection.y * _accelerationRate));
+            _rigidbody.AddForce(_currentMoveDirection * _accelerationRate);
+
         }
+
+        
+
         public Vector2 CurrentMoveDirection => _currentMoveDirection;
         public bool IsMoving => _isMoving;
         public float AccelerationRate => _accelerationRate;
