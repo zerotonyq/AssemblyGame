@@ -11,27 +11,27 @@ namespace AssemblySystem.Views
     [RequireComponent(typeof(MeshFilter))]
     public class CommandView<T> : MonoBehaviour, ICommandView where T : AssemblyCommand, new()
     {
-        protected AssemblyManager assemblyManager;
+        protected AssemblyCommandExecuter assemblyCommandExecuter;
         protected AssemblyCommand assemblyCommand = new T();
 
         public UnityAction<AssemblyCommand> CommandAction { get; set; }
 
-        public void Initialize(AssemblyManager assemblyManager)
+        public void Initialize(AssemblyCommandExecuter assemblyCommandExecuter)
         {
-            this.assemblyManager = assemblyManager;
+            this.assemblyCommandExecuter = assemblyCommandExecuter;
             Subscribe();
         }
 
         private void Subscribe()
         {
-            CommandAction += assemblyManager.ExecCommand;
+            CommandAction += assemblyCommandExecuter.ExecCommand;
         }
 
         private void Unsubscribe()
         {
-            if (assemblyManager == null)
+            if (assemblyCommandExecuter == null)
                 return;
-            CommandAction -= assemblyManager.ExecCommand;
+            CommandAction -= assemblyCommandExecuter.ExecCommand;
         }
 
         //unary command
@@ -43,14 +43,14 @@ namespace AssemblySystem.Views
         //binary command
         public void TryExecCommand(ICommandView other)
         {
-            if (assemblyManager != null)
+            if (assemblyCommandExecuter != null)
             {
                 CommandAction.Invoke(assemblyCommand);
             }
-            else if (other.AssemblyManager != null)
+            else if (other.AssemblyCommandExecuter != null)
             {
                 other.CommandAction.Invoke(assemblyCommand);
-                Initialize(other.AssemblyManager);
+                Initialize(other.AssemblyCommandExecuter);
             }
             else
             {
@@ -64,7 +64,7 @@ namespace AssemblySystem.Views
         }
 
         public Mesh GetMesh() => GetComponent<MeshFilter>().sharedMesh;
-        public AssemblyManager AssemblyManager => assemblyManager;
+        public AssemblyCommandExecuter AssemblyCommandExecuter => assemblyCommandExecuter;
         public AssemblyCommand AssemblyCommand => assemblyCommand;
     }
 }

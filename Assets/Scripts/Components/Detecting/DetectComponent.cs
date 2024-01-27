@@ -25,6 +25,7 @@ namespace Game.Components
         private Coroutine _detectionCoroutine;
 
         private RaycastHit[] _detectedRaycastHits;
+        private RaycastHit[] _targetRayCastHitThroughWall = new RaycastHit[1];
 
         private bool _isInitialized = false;
         
@@ -77,16 +78,15 @@ namespace Game.Components
                 1 << _detectionLayer);
 
             _currentTarget = TryGetTargetFromArray();
-            Debug.Log(_currentTarget);
+            
             if (!_currentTarget)
                 return;
             
-            Physics.Raycast(transform.position, _currentTarget.position - transform.position, out RaycastHit hit);
+            Physics.Raycast(transform.position, _currentTarget.position - transform.position,  out RaycastHit targetRayCastHitThroughWall);
 
-            if (!hit.collider || !hit.collider.TryGetComponent(_targetComponent, out Component comp))
+            if (!targetRayCastHitThroughWall.collider || 
+                !targetRayCastHitThroughWall.collider.TryGetComponent(_targetComponent, out Component comp))
                 _currentTarget = null;
-            
-            
             
             OnTargetDetected?.Invoke(_currentTarget);
             
@@ -119,7 +119,7 @@ namespace Game.Components
                 
                 break;
             }
-
+           
             return target;
         }
         

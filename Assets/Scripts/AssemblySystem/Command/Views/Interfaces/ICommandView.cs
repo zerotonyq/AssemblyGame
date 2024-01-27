@@ -6,12 +6,12 @@ namespace AssemblySystem.Views.IBase
 {
     public interface ICommandView
     {
-        AssemblyManager AssemblyManager { get; }
+        AssemblyCommandExecuter AssemblyCommandExecuter { get; }
         AssemblyCommand AssemblyCommand { get; }
         
         public UnityAction<AssemblyCommand> CommandAction { get; set; }
         
-        void Initialize(AssemblyManager assemblyManager);
+        void Initialize(AssemblyCommandExecuter assemblyCommandExecuter);
         void TryExecCommand();
     }
 }

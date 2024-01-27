@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AssemblySystem.Command.CommandsSO.Base
 {
-    public class AssemblyCommandSO: ScriptableObject
+    public class AssemblyCommandData: ScriptableObject
     {
         
     }

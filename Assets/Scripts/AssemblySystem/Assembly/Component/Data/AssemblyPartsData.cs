@@ -4,7 +4,7 @@ using UnityEngine;
 namespace AssemblySystem.Manager.Data
 {
     [CreateAssetMenu(menuName = "AssemblySystem/AssemblyPartsSO", fileName = "DefaultAssemblyPartsSO")]
-    public class AssemblyPartsSO : ScriptableObject
+    public class AssemblyPartsData : ScriptableObject
     {
         [SerializeField] private List<GameObject> prefabViews;
         public IReadOnlyList<GameObject> Prefabs => prefabViews;

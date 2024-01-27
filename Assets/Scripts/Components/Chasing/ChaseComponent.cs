@@ -27,6 +27,8 @@ namespace Game.Components.Chasing
         private float _additionFollowingTime;
         private float _additionFollowingDelta;
         private bool _isAdditionalFollowing;
+
+        public Action OnNavMeshLinkFounded;
         public void Init(
             MoveComponent moveComponent,
             RotateComponent rotateComponent,
@@ -84,6 +86,9 @@ namespace Game.Components.Chasing
             _currentTarget = target;
             
             _navMeshAgent.SetDestination(_currentTarget.position);
+
+            if (_navMeshAgent.isOnOffMeshLink)
+                OnNavMeshLinkFounded?.Invoke();
         }
         
         private void FixedUpdate()

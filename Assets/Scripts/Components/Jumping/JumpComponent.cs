@@ -50,11 +50,11 @@ namespace Game.Components.Jumping
             
             var size = Physics.OverlapBoxNonAlloc(
                 transform.position - _checkSurfaceLocalPoint, 
-                new Vector3(0.5f, 0.3f, 0.5f), 
+                _checkSurfaceBoxHalf, 
                 results, 
                 Quaternion.identity,
                 1 << _floorLayerMask);
-            Debug.Log(size);
+            
             for (int i = 0; i < results.Length; ++i)
             {
                 if (results[i])

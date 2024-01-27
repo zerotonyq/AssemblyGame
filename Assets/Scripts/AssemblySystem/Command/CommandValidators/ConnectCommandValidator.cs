@@ -9,10 +9,10 @@ namespace AssemblySystem.Scheme.CommandValidators
 {
     public  class ConnectCommandValidator : IValidatable
     {
-        public static void ValidateCommand(ConnectAssemblyCommand command, ConnectAssemblyCommandSO commandSo)
+        public static void ValidateCommand(ConnectAssemblyCommand command, ConnectAssemblyCommandData commandData)
         {
-            if (command.first.GetMesh() == commandSo.firstMesh &&
-                command.second.GetMesh() == commandSo.secondMesh)
+            if (command.first.GetMesh() == commandData.firstMesh &&
+                command.second.GetMesh() == commandData.secondMesh)
             {
                 Debug.Log("CONNECT WOOOW");
             }

@@ -776,8 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11b09b402ff4a86ac4246c1cef1a592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scheme: {fileID: 11400000, guid: 51570e143d1229742a10cdfaa8244454, type: 2}
-  parts: {fileID: 11400000, guid: 4462c00a96ad4144c8c2ea8bb12c5d23, type: 2}
 --- !u!4 &1114528275
 Transform:
   m_ObjectHideFlags: 0
@@ -870,6 +868,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c97619c1b293d249817e58f1c86e8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  virtualCameraPrefab: {fileID: 0}
+  defaultCharacterPrefab: {fileID: 0}
 --- !u!1001 &1890862000
 PrefabInstance:
   m_ObjectHideFlags: 0

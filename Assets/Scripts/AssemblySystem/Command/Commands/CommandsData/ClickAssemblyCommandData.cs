@@ -4,7 +4,7 @@ using UnityEngine;
 namespace AssemblySystem.Command.CommandsSO
 {
     [CreateAssetMenu(menuName = "AssemblySystem/AssemblyCommandSO/ClickAssemblyCommandSO", fileName = "DefaultClickACSO")]
-    public class ClickAssemblyCommandSO : AssemblyCommandSO
+    public class ClickAssemblyCommandData : AssemblyCommandData
     {
         public Mesh mesh;
     }

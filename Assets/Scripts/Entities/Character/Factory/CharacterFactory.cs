@@ -1,3 +1,4 @@
+using Game.Components.Inventory;
 using Game.Components.Jumping;
 using Game.Components.Jumping.Config;
 using Game.Components.Rotating;
@@ -33,6 +34,9 @@ namespace Character
 
             var jumpComponent = character.AddComponentToCharacter<JumpComponent>();
             jumpComponent.Init(jumpConfig ?? JumpConfig.DefaultJumpConfig);
+
+            var inventoryComponent = character.AddComponentToCharacter<InventoryComponent>();
+            inventoryComponent.Init();
             
             return character;
         }

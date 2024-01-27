@@ -8,9 +8,9 @@ namespace AssemblySystem.Scheme.CommandValidators
 {
     public class ClickCommandValidator : IValidatable
     {
-        public static void ValidateCommand(ClickAssemblyCommand command, ClickAssemblyCommandSO commandSo)
+        public static void ValidateCommand(ClickAssemblyCommand command, ClickAssemblyCommandData commandData)
         {
-            if (command.clickView.GetMesh() != commandSo.mesh)
+            if (command.clickView.GetMesh() != commandData.mesh)
                 throw new Exception("wrong mesh to click");
             Debug.Log("CLICK WOOOW");
         }

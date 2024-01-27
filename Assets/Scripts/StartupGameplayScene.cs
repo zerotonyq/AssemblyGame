@@ -37,7 +37,7 @@ namespace Game
 
         private void Init()
         {
-            _enemyFactory.InstantiateEnemyPack(1);
+            _enemyFactory.InstantiateEnemyPack(2);
             
             _mainCharacter = 
                 CharacterFactory.CreateCharacter(_defaultCharacterPrefab, "player");
