@@ -63,6 +63,9 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Handler
             
             if (currentSelectView == null)
                 return;
+
+            if (currentSelectView.IsStatic)
+                return;
             
             currentSelectView.Select();
                     

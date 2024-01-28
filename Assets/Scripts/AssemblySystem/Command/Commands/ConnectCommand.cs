@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AssemblySystem.Command
 {
-    public class ConnectAssemblyCommand : AssemblyCommand
+    public class ConnectCommand : Command
     {
         public ConnectView first, second;
         public override void Execute()

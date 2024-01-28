@@ -11,8 +11,8 @@ namespace AssemblySystem.Scheme
     [CreateAssetMenu(menuName = "AssemblySystem/CreateAssemblyScheme", fileName = "DefaultAssemblyScheme")]
     public class AssemblyCommandSchemeData : ScriptableObject
     {
-        public List<AssemblyCommandData> AssemblySequence;
-        public void ValidateCommand(AssemblyCommand command, int commandNumber)
+        public List<CommandData> AssemblySequence;
+        public void ValidateCommand(Command.Command command, int commandNumber)
         {
             if (commandNumber >= AssemblySequence.Count)
                 throw new Exception("Assembly sequence list bounds");
@@ -20,19 +20,19 @@ namespace AssemblySystem.Scheme
             var otherCommandType = command.GetType();
             var schemeCommandType = AssemblySequence[commandNumber].GetType();
             
-            if (otherCommandType == typeof(ConnectAssemblyCommand) && 
-                schemeCommandType == typeof(ConnectAssemblyCommandData))
+            if (otherCommandType == typeof(ConnectCommand) && 
+                schemeCommandType == typeof(ConnectCommandData))
             {
                 ConnectCommandValidator.ValidateCommand(
-                    command as ConnectAssemblyCommand, 
-                    AssemblySequence[commandNumber] as ConnectAssemblyCommandData);
+                    command as ConnectCommand, 
+                    AssemblySequence[commandNumber] as ConnectCommandData);
             }
-            else if (otherCommandType == typeof(ClickAssemblyCommand) && 
-                     schemeCommandType == typeof(ClickAssemblyCommandData))
+            else if (otherCommandType == typeof(ClickCommand) && 
+                     schemeCommandType == typeof(ClickCommandData))
             {
                 ClickCommandValidator.ValidateCommand(
-                    command as ClickAssemblyCommand,
-                    AssemblySequence[commandNumber] as ClickAssemblyCommandData);
+                    command as ClickCommand,
+                    AssemblySequence[commandNumber] as ClickCommandData);
             }
             else
             {

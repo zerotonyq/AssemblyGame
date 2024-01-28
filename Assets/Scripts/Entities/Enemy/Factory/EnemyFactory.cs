@@ -19,13 +19,13 @@ namespace Enemy
     {
         private CoroutineExecuter _coroutineExecuter = new GameObject("coroutineExecuter").AddComponent<CoroutineExecuter>();
         
-        [Inject] private GameObject _characterPrefab;
+        [Inject] private CharacterFactory _characterFactory;
         
-        public void CreateEnemy()
+        public void CreateEnemy(GameObject enemyPrefab = null)
         {
-            var currentEnemy = CharacterFactory.CreateCharacter(
-                _characterPrefab, 
-                "enemy",
+            var currentEnemy = _characterFactory.CreateCharacter(
+                enemyPrefab,
+                name : "enemy",
                 rotateConfig : new RotateConfig(autoRotateToMoveDirection: true));
             
             var detectComponent = currentEnemy.AddComponentToCharacter<DetectComponent>();
@@ -51,16 +51,16 @@ namespace Enemy
                 jumpComp);
         }
         
-        public void InstantiateEnemyPack(int count)
+        public void InstantiateEnemyPack(GameObject enemyPrefab = null, int count = 1)
         {
-            _coroutineExecuter.StartCoroutine(InstantiateEnemyPackCoroutine(count));
+            _coroutineExecuter.StartCoroutine(InstantiateEnemyPackCoroutine(enemyPrefab, count));
         }
 
-        private IEnumerator InstantiateEnemyPackCoroutine(int count = 1, float delta = 0.1f)
+        private IEnumerator InstantiateEnemyPackCoroutine(GameObject enemyPrefab = null , int count = 1, float delta = 0.1f)
         {
             for(int i = 0; i < count; i++)
             {
-                CreateEnemy();
+                CreateEnemy(enemyPrefab);
                 
                 yield return new WaitForSeconds(delta);
             }

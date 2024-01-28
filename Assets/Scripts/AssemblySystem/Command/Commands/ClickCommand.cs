@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace AssemblySystem.Command
 {
-    public class ClickAssemblyCommand : AssemblyCommand
+    public class ClickCommand : Command
     {
         public ClickView clickView;
         public override void Execute()

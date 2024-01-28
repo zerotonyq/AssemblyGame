@@ -45,24 +45,29 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.16f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AdvanceInteractionSytem\Interfaces\IAdvanceInteractionToggleable.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\CommandExecuter\AssemblyCommandExecutor.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\CommandExecuter\Interfaces\ICommandExecutor.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Component\Data\AssemblyCommandSchemeData.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Component\Data\AssemblyComponentData.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Component\Data\AssemblyPartsData.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Manager\AssemblyManager.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Assembly\Manager\Data\AssemblyManagerData.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\Base\AssemblyCommandData.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\ClickAssemblyCommandData.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\ConnectAssemblyCommandData.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\Base\CommandData.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\ClickCommandData.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\CommandsData\ConnectCommandData.cs" />
+    <Compile Include="Assets\Scripts\Components\Inventory\CommandExecutor\InventoryCommandExecutor.cs" />
+    <Compile Include="Assets\Scripts\Components\Inventory\Config\InventoryInitData.cs" />
     <Compile Include="Assets\Scripts\Components\Inventory\InventoryComponent.cs" />
     <Compile Include="Assets\Scripts\Components\Inventory\Items\Base\Item.cs" />
+    <Compile Include="Assets\Scripts\Components\Inventory\View\InventoryView.cs" />
     <Compile Include="Assets\Scripts\Entities\Enemy\EventSubscriber\EnemyEventSubscriber.cs" />
     <Compile Include="Assets\Scripts\UserInputSystem\SelectObjectSystem\KeyboardMouse\Handler\MouseMoveSelectHandler.cs" />
     <Compile Include="Assets\Scripts\Components\Chasing\ChaseComponent.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\Base\AssemblyCommand.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ClickAssemblyCommand.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\Base\Command.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ClickCommand.cs" />
     <Compile Include="Assets\Scripts\Entities\Character\Character.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Assembly\AssemblyCommandExecuter.cs" />
-    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectAssemblyCommand.cs" />
+    <Compile Include="Assets\Scripts\AssemblySystem\Command\Commands\ConnectCommand.cs" />
     <Compile Include="Assets\Scripts\StartupGameplayScene.cs" />
     <Compile Include="Assets\Scripts\Components\Jumping\JumpComponent.cs" />
     <Compile Include="Assets\Scripts\AssemblySystem\Command\CommandValidators\ClickCommandValidator.cs" />

@@ -13,34 +13,34 @@ namespace Game
 {
     public class StartupGameplayScene
     {
-        private GameObject _defaultCharacterPrefab;
         private Character.Character _mainCharacter;
         private InputMoveHandler _currentMoveHandler;
         private InputJumpHandler _currentJumpHandler;
         private CinemachineVirtualCamera _virtualCameraPrefab;
         private EnemyFactory _enemyFactory;
+        private CharacterFactory _characterFactory;
         
         [Inject]
-        public StartupGameplayScene(GameObject defaultCharacterPrefab, 
+        public StartupGameplayScene(
             InputMoveHandler moveHandler,
             InputJumpHandler inputJumpHandler,
             CinemachineVirtualCamera virtualCameraPrefab,
-            EnemyFactory enemyFactory)
+            EnemyFactory enemyFactory,
+            CharacterFactory characterFactory)
         {
             _virtualCameraPrefab = virtualCameraPrefab;
             _currentMoveHandler = moveHandler;
             _currentJumpHandler = inputJumpHandler;
-            _defaultCharacterPrefab = defaultCharacterPrefab;
+            _characterFactory = characterFactory;
             _enemyFactory = enemyFactory;
             Init();
         }
 
         private void Init()
         {
-            _enemyFactory.InstantiateEnemyPack(2);
+            _enemyFactory.InstantiateEnemyPack(count: 2);
             
-            _mainCharacter = 
-                CharacterFactory.CreateCharacter(_defaultCharacterPrefab, "player");
+            _mainCharacter = _characterFactory.CreateCharacter(name : "player");
             
             _mainCharacter.AddComponentToCharacter<PlayerComponent>();
             

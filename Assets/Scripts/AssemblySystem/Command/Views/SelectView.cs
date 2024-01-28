@@ -10,6 +10,7 @@ using Zenject;
 [RequireComponent(typeof(Collider), typeof(MeshFilter))]
 public class SelectView : MonoBehaviour
 {
+    [SerializeField] private bool _isStatic = false;
     private bool _isSelected = false;
     private Collider _collider;
     private Mesh _mesh;
@@ -33,4 +34,6 @@ public class SelectView : MonoBehaviour
     public bool IsSelected => _isSelected;
     public Collider Collider => _collider;
     public Mesh Mesh => _mesh;
+
+    public bool IsStatic => _isStatic;
 }

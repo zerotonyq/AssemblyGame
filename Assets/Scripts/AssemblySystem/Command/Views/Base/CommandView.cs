@@ -1,6 +1,7 @@
 using System;
 using AssemblySystem.Command;
 using AssemblySystem.Manager;
+using AssemblySystem.Manager.Interfaces;
 using AssemblySystem.Views.IBase;
 using UnityEngine;
 using UnityEngine.Events;
@@ -8,49 +9,49 @@ using Zenject;
 
 namespace AssemblySystem.Views
 {
-    [RequireComponent(typeof(MeshFilter))]
-    public class CommandView<T> : MonoBehaviour, ICommandView where T : AssemblyCommand, new()
+    [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
+    public class CommandView<T> : MonoBehaviour, ICommandView where T : Command.Command, new()
     {
-        protected AssemblyCommandExecuter assemblyCommandExecuter;
-        protected AssemblyCommand assemblyCommand = new T();
+        protected ICommandExecutor CommandExecutor;
+        protected Command.Command _command = new T();
 
-        public UnityAction<AssemblyCommand> CommandAction { get; set; }
+        public UnityAction<Command.Command> CommandAction { get; set; }
 
-        public void Initialize(AssemblyCommandExecuter assemblyCommandExecuter)
+        public void Initialize(ICommandExecutor assemblyCommandExecutor)
         {
-            this.assemblyCommandExecuter = assemblyCommandExecuter;
+            this.CommandExecutor = assemblyCommandExecutor;
             Subscribe();
         }
 
         private void Subscribe()
         {
-            CommandAction += assemblyCommandExecuter.ExecCommand;
+            CommandAction += CommandExecutor.ExecCommand;
         }
 
         private void Unsubscribe()
         {
-            if (assemblyCommandExecuter == null)
+            if (CommandExecutor == null)
                 return;
-            CommandAction -= assemblyCommandExecuter.ExecCommand;
+            CommandAction -= CommandExecutor.ExecCommand;
         }
 
         //unary command
         public void TryExecCommand()
         {
-            CommandAction.Invoke(assemblyCommand);
+            CommandAction.Invoke(_command);
         }
 
         //binary command
         public void TryExecCommand(ICommandView other)
         {
-            if (assemblyCommandExecuter != null)
+            if (CommandExecutor != null)
             {
-                CommandAction.Invoke(assemblyCommand);
+                CommandAction.Invoke(_command);
             }
-            else if (other.AssemblyCommandExecuter != null)
+            else if (other.AssemblyCommandExecutor != null)
             {
-                other.CommandAction.Invoke(assemblyCommand);
-                Initialize(other.AssemblyCommandExecuter);
+                other.CommandAction.Invoke(_command);
+                Initialize(other.AssemblyCommandExecutor);
             }
             else
             {
@@ -64,7 +65,7 @@ namespace AssemblySystem.Views
         }
 
         public Mesh GetMesh() => GetComponent<MeshFilter>().sharedMesh;
-        public AssemblyCommandExecuter AssemblyCommandExecuter => assemblyCommandExecuter;
-        public AssemblyCommand AssemblyCommand => assemblyCommand;
+        public ICommandExecutor AssemblyCommandExecutor => CommandExecutor;
+        public Command.Command Command => _command;
     }
 }

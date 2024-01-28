@@ -1,17 +1,18 @@
 using AssemblySystem.Command;
 using AssemblySystem.Manager;
+using AssemblySystem.Manager.Interfaces;
 using UnityEngine.Events;
 
 namespace AssemblySystem.Views.IBase
 {
     public interface ICommandView
     {
-        AssemblyCommandExecuter AssemblyCommandExecuter { get; }
-        AssemblyCommand AssemblyCommand { get; }
+        ICommandExecutor AssemblyCommandExecutor { get; }
+        Command.Command Command { get; }
         
-        public UnityAction<AssemblyCommand> CommandAction { get; set; }
+        public UnityAction<Command.Command> CommandAction { get; set; }
         
-        void Initialize(AssemblyCommandExecuter assemblyCommandExecuter);
+        void Initialize(ICommandExecutor assemblyCommandExecutor);
         void TryExecCommand();
     }
 }

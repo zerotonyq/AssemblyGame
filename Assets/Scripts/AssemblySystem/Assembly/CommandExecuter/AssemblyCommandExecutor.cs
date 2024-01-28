@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using AssemblySystem.Command;
 using AssemblySystem.Manager.Data;
+using AssemblySystem.Manager.Interfaces;
 using AssemblySystem.Scheme;
 using AssemblySystem.Views;
 using AssemblySystem.Views.IBase;
@@ -10,18 +11,18 @@ using Zenject;
 
 namespace AssemblySystem.Manager
 {
-    public class AssemblyCommandExecuter
+    public class AssemblyCommandExecutor : ICommandExecutor
     {
-        private Stack<AssemblyCommand> _commands = new Stack<AssemblyCommand>();
+        private Stack<Command.Command> _commands = new Stack<Command.Command>();
 
         private AssemblyCommandSchemeData _commandSchemeData;
         
-        public AssemblyCommandExecuter(AssemblyCommandSchemeData commandSchemeData)
+        public AssemblyCommandExecutor(AssemblyCommandSchemeData commandSchemeData)
         {
             _commandSchemeData = commandSchemeData;
         }
         
-        public void ExecCommand(AssemblyCommand command)
+        public void ExecCommand(Command.Command command)
         {
             try
             {
@@ -40,15 +41,16 @@ namespace AssemblySystem.Manager
             }
         }
 
-        public AssemblyCommand UndoCommand()
+        public Command.Command UndoCommand()
         {
             if (_commands.Count == 0)
                 return null;
             
             return _commands.Pop();
         }
-        public IReadOnlyCollection<AssemblyCommand> Commands => _commands;
+        public IReadOnlyCollection<Command.Command> Commands => _commands;
         
-    }    
+    }
+    
 }
 

@@ -6,11 +6,11 @@ using Zenject;
 
 namespace AssemblySystem.Views
 {
-    public class ClickView : CommandView<ClickAssemblyCommand>
+    public class ClickView : CommandView<ClickCommand>
     {
         public void Click()
         {
-            var currentCommand = assemblyCommand as ClickAssemblyCommand;
+            var currentCommand = _command as ClickCommand;
             currentCommand.clickView = this;
             TryExecCommand();
         }

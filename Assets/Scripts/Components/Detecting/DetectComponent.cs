@@ -82,9 +82,13 @@ namespace Game.Components
             if (!_currentTarget)
                 return;
             
-            Physics.Raycast(transform.position, _currentTarget.position - transform.position,  out RaycastHit targetRayCastHitThroughWall);
+            Physics.Raycast(
+                new Ray(transform.position, _currentTarget.position - transform.position),  
+                out RaycastHit targetRayCastHitThroughWall, 
+                100f,
+                1 << 7);
 
-            if (!targetRayCastHitThroughWall.collider || 
+            if (targetRayCastHitThroughWall.collider &&
                 !targetRayCastHitThroughWall.collider.TryGetComponent(_targetComponent, out Component comp))
                 _currentTarget = null;
             

@@ -13,7 +13,7 @@ namespace AssemblySystem.Manager.Views
      
         private AssemblyPartsData _refferenceParts;
         
-        private AssemblyCommandExecuter _commandExecuter;
+        private AssemblyCommandExecutor _assemblyCommandExecutor;
 
         public void Init(AssemblyComponentData data)
         {
@@ -22,7 +22,7 @@ namespace AssemblySystem.Manager.Views
         }
         private void Start()
         {
-            _commandExecuter = new AssemblyCommandExecuter(_schemeData);
+            _assemblyCommandExecutor = new AssemblyCommandExecutor(_schemeData);
             Construct();
         }
         
@@ -36,16 +36,17 @@ namespace AssemblySystem.Manager.Views
                     Vector3.zero, 
                     Quaternion.identity, 
                     null);
+                
                 var commandViewComponents = obj.GetComponents<ICommandView>();
                 
                 foreach (var viewComponent in commandViewComponents)
                 {
-                    viewComponent.Initialize(_commandExecuter);
+                    viewComponent.Initialize(_assemblyCommandExecutor);
                 }
             }
         }
         
-        public bool IsAssemblied => _commandExecuter.Commands.Count == _schemeData.AssemblySequence.Count;
+        public bool IsAssemblied => _assemblyCommandExecutor.Commands.Count == _schemeData.AssemblySequence.Count;
 
     }
     

@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace AssemblySystem.Command
 {
-    public class AssemblyCommand
+    public class Command
     {
-        public AssemblyCommand()
+        public Command()
         {
             
         }

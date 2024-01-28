@@ -9,7 +9,7 @@ using UnityEngine.Events;
 using Zenject;
 
 [RequireComponent(typeof(SelectView))]
-public class ConnectView : CommandView<ConnectAssemblyCommand>
+public class ConnectView : CommandView<ConnectCommand>
 {
     public void OnTriggerEnter(Collider other)
     {
@@ -18,7 +18,7 @@ public class ConnectView : CommandView<ConnectAssemblyCommand>
             if (!gameObject.GetComponent<SelectView>().IsSelected)
                 return;
             
-            var currentCommand = assemblyCommand as ConnectAssemblyCommand;
+            var currentCommand = _command as ConnectCommand;
             currentCommand.first = this;
             currentCommand.second = view;
             
