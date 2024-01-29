@@ -9,7 +9,7 @@ namespace Game.UserInputSystem.SelectObjectSystem
         private Mesh _currentSelectedMesh;
         protected bool _isSelected = false;
 
-        protected void AssignObject(SelectView obj)
+        protected void AssignObject(SelectComponent obj)
         {
             _currentSelectedGameObject = obj.gameObject;
             _currentSelectedMesh = obj.Mesh;

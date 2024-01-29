@@ -36,7 +36,7 @@ namespace AssemblySystem.Manager.Views
                     Vector3.zero, 
                     Quaternion.identity, 
                     null);
-                
+
                 var commandViewComponents = obj.GetComponents<ICommandView>();
                 
                 foreach (var viewComponent in commandViewComponents)

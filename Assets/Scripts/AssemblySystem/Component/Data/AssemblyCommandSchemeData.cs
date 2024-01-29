@@ -21,11 +21,11 @@ namespace AssemblySystem.Scheme
             var schemeCommandType = AssemblySequence[commandNumber].GetType();
             
             if (otherCommandType == typeof(ConnectCommand) && 
-                schemeCommandType == typeof(ConnectCommandData))
+                schemeCommandType == typeof(ConnectViewConfig))
             {
                 ConnectCommandValidator.ValidateCommand(
                     command as ConnectCommand, 
-                    AssemblySequence[commandNumber] as ConnectCommandData);
+                    AssemblySequence[commandNumber] as ConnectViewConfig);
             }
             else if (otherCommandType == typeof(ClickCommand) && 
                      schemeCommandType == typeof(ClickCommandData))

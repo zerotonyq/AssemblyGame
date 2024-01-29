@@ -59,17 +59,17 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Handler
                 RAY_DISTANCE,
                 RAYCAST_RESULT_COUNT);
 
-            SelectView currentSelectView = RaycastHelper.GetClosest<SelectView>(ref results);
+            SelectComponent currentSelectComponent = RaycastHelper.GetClosest<SelectComponent>(ref results);
             
-            if (currentSelectView == null)
+            if (currentSelectComponent == null)
                 return;
 
-            if (currentSelectView.IsStatic)
+            if (currentSelectComponent.IsStatic)
                 return;
             
-            currentSelectView.Select();
+            currentSelectComponent.Select();
                     
-            AssignObject(currentSelectView);
+            AssignObject(currentSelectComponent);
 
             _isSelected = true;
             
@@ -80,7 +80,7 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Handler
             
             var offset = CurrentSelectedObjectPosition - targetPosition;
             
-            currentSelectView.StartCoroutine(MoveObjectCoroutine(offset));
+            currentSelectComponent.StartCoroutine(MoveObjectCoroutine(offset));
         }
 
         private IEnumerator MoveObjectCoroutine(Vector3 offset)
@@ -108,7 +108,7 @@ namespace UserInputSystem.SelectObjectSystem.KeyboardMouse.Handler
             if (_currentSelectedGameObject == null)
                 return;
             
-            var currentSelected = _currentSelectedGameObject.GetComponent<SelectView>();
+            var currentSelected = _currentSelectedGameObject.GetComponent<SelectComponent>();
             currentSelected.Deselect();
             
             UnassignObject();

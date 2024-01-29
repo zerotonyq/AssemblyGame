@@ -1,6 +1,5 @@
 using AssemblySystem.Command;
 using AssemblySystem.Views;
-using AssemblySystem.Views.IBase;
 using UnityEngine;
 
 namespace Game.Components.Inventory.Data
@@ -10,10 +9,14 @@ namespace Game.Components.Inventory.Data
     {
         [SerializeField] private GameObject _GFXPrefab;
 
-        [SerializeField] private GameObject _connectPoint;
+        [SerializeField] private ConnectView _cell;
+
+        [SerializeField] private int _inventoryCapacity;
         
         public GameObject GfxPrefab => _GFXPrefab;
 
-        public GameObject ConnectPoint => _connectPoint;
+        public ConnectView Cell => _cell;
+        
+        public int InventoryCapacity => _inventoryCapacity;
     }
 }
