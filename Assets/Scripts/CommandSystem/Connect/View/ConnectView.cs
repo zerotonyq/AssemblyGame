@@ -46,12 +46,14 @@ public class ConnectView : CommandView
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out ConnectView plug))
+        if (other.TryGetComponent(out ConnectView otherView))
         {
-            if (plug._isJack)
+            if (!otherView._isJack)
                 return;
 
-            TryExecCommand();
+            if(IsPartOfAssembly)
+                otherView.Subscribe(AssemblyComponent.AddToAssembly);
+            otherView.TryExecCommand();
         }
     }
     
